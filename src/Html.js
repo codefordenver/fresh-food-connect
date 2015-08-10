@@ -28,6 +28,7 @@ export default class Html extends Component {
         <head>
           <meta charSet="utf-8"/>
           <title>{title}</title>
+          <meta name="viewport" content="width=device-width; initial-scale=1.0;"/>
           <meta property="og:site_name" content={title}/>
           <meta property="og:image" content={image}/>
           <meta property="og:locale" content="en_US"/>
