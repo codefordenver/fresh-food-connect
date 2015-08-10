@@ -17,6 +17,7 @@ class LoginSuccess extends Component {
       <div className="container">
         <h1>Login Success</h1>
         <div>
+          <a href="/profile">update profile</a>
           <p>Hi, {user.name}. You have just successfully logged in, and were forwarded here
             by <code>componentWillReceiveProps()</code> in <code>App.js</code>, which is listening to
             the auth reducer via redux `@connect`. How exciting!
