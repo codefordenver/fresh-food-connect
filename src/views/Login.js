@@ -49,7 +49,7 @@ class Login extends Component {
                 floatingLabelText="Password"
                 type="password"/>
             <br/>
-            <RaisedButton label="login" onClick={::this.handleSubmit}
+            <RaisedButton label="log in" onClick={::this.handleSubmit}
             />
           </form>
           <p>This will "log you in" as this user, storing the username in the session of the API server.</p>

@@ -12,10 +12,19 @@ const ThemeManager = new Styles.ThemeManager();
 const styles = __CLIENT__ ? require('./Login.scss') : requireServerCss(require.resolve('./Login.scss'));
 
 class UserProfile extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      address: '',
+      city: 'Denver',
+      state: 'Co',
+      zip: ''
+    };
+  }
+
   static propTypes = {
     user: PropTypes.object,
-    login: PropTypes.func,
-    logout: PropTypes.func
+    login: PropTypes.func
   }
 
   getChildContext() {
@@ -26,35 +35,44 @@ class UserProfile extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const input = React.findDOMNode(this.refs.username).children[1];
-    this.props.login(input.value);
-    input.value = '';
+    console.log(this.state);
+  }
+
+  _updateInputState(key, event) {
+    this.setState({
+      [key]: event.target.value
+    });
   }
 
   render() {
     const {user, logout} = this.props;
     return (
       <div className={styles.loginPage + ' container'}>
-        <h1>UserProfile</h1>
+        <h1>Profile</h1>
         { user &&
         <div>
           <form className="login-form" onSubmit={::this.handleSubmit}>
             <TextField
                 floatingLabelText="Address"
-                multiLine={true} />
+                value={this.state.address}
+                multiLine={true}
+                onChange={this._updateInputState.bind(this, 'address')} />
             <br />
             <TextField
                 floatingLabelText="City"
-                defaultValue="Denver" />
+                value={this.state.city}
+                onChange={this._updateInputState.bind(this, 'city')} />
             <br />
             <TextField
                 floatingLabelText="State"
-                defaultValue="CO"
+                value={this.state.state}
+                onChange={this._updateInputState.bind(this, 'state')}
                 style={{width: '5rem'}}/>
-                {' '}
+            {' '}
             <TextField
                 floatingLabelText="Zip"
-                defaultValue=""
+                value={this.state.zip}
+                onChange={this._updateInputState.bind(this, 'zip')}
                 style={{width: '9rem'}} />
             <br />
             <br />
@@ -65,9 +83,12 @@ class UserProfile extends Component {
         }
         { !user &&
         <div>
-          <p>You need to login first.</p>
+          <p>You need to log in first.</p>
           <div>
-            <button className="btn btn-danger" onClick={logout}><i className="fa fa-sign-out"/>{' '}Log Out</button>
+            <RaisedButton
+                label="Log in"
+                linkButton={true}
+                href="login" />
           </div>
         </div>
         }
