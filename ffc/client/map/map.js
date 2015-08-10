@@ -1,5 +1,3 @@
-Markers = new Mongo.Collection('markers');
-
 if (Meteor.isClient) {
   Template.map.onCreated(function() {
     GoogleMaps.ready('map', function(map) {
