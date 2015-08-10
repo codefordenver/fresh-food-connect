@@ -78,7 +78,6 @@ class UserProfile extends Component {
             <br />
             <RaisedButton label="Save" onClick={::this.handleSubmit}/>
           </form>
-          <p>This will "log you in" as this user, storing the username in the session of the API server.</p>
         </div>
         }
         { !user &&

@@ -10,8 +10,20 @@ import {load as loadAuth} from '../actions/authActions';
 import InfoBar from '../components/InfoBar';
 import {createTransitionHook} from '../universalRouter';
 import {requireServerCss} from '../util';
+import {
+  AppBar,
+  FontIcon,
+  Styles,
+  Toolbar,
+  ToolbarGroup,
+  ToolbarTitle,
+  DropDownIcon
+} from 'material-ui';
 
 const styles = __CLIENT__ ? require('./App.scss') : requireServerCss(require.resolve('./App.scss'));
+
+const ThemeManager = new Styles.ThemeManager();
+
 
 class App extends Component {
   static propTypes = {
@@ -38,7 +50,7 @@ class App extends Component {
   componentWillReceiveProps(nextProps) {
     if (!this.props.user && nextProps.user) {
       // login
-      this.context.router.transitionTo('/loginSuccess');
+      this.context.router.transitionTo('/profile');
     } else if (this.props.user && !nextProps.user) {
       // logout
       this.context.router.transitionTo('/');
@@ -50,15 +62,39 @@ class App extends Component {
     this.props.logout();
   }
 
+  getChildContext() {
+    return {
+      muiTheme: ThemeManager.getCurrentTheme()
+    };
+  }
+
   render() {
     const {user} = this.props;
+
+    let iconMenuItems = user ? [
+      // { payload: '1', text: `Logged in as ${user.name}` },
+      { payload: '2', text: 'Log Out' }
+    ] : [
+      { payload: '1', text: 'Log In' }
+    ];
+
     return (
       <div className={styles.app}>
-        <nav className="navbar navbar-default navbar-fixed-top">
+
+        <Toolbar style={{backgroundColor: '#00AD88'}}>
+          <ToolbarGroup key={0} float="left">
+            <ToolbarTitle text="Fresh Food Connect" />
+          </ToolbarGroup>
+          <ToolbarGroup key={1} float="right">
+            <DropDownIcon iconClassName="icon-navigation-expand-more" menuItems={iconMenuItems} />
+          </ToolbarGroup>
+        </Toolbar>
+
+        {/*<nav className="navbar navbar-default navbar-fixed-top">
           <div className="container">
             <Link to="/" className="navbar-brand">
               <div className={styles.brand}/>
-              React Redux Example
+              Fresh Food Connect
             </Link>
 
             <ul className="nav navbar-nav">
@@ -69,7 +105,7 @@ class App extends Component {
             {user && <p className={styles.loggedInMessage + ' navbar-text'}>Logged in as <strong>{user.name}</strong>.</p>}
 
           </div>
-        </nav>
+        </nav>*/}
 
         <div className={styles.appContent}>
           {this.props.children}
@@ -79,6 +115,10 @@ class App extends Component {
     );
   }
 }
+
+App.childContextTypes = {
+  muiTheme: React.PropTypes.object
+};
 
 @connect(state => ({
   user: state.auth.user
