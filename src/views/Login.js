@@ -5,6 +5,9 @@ import {isLoaded as isAuthLoaded} from '../reducers/auth';
 import * as authActions from '../actions/authActions';
 import {load as loadAuth} from '../actions/authActions';
 import {requireServerCss} from '../util';
+import { RaisedButton, Styles, TextField } from 'material-ui';
+
+const ThemeManager = new Styles.ThemeManager();
 
 const styles = __CLIENT__ ? require('./Login.scss') : requireServerCss(require.resolve('./Login.scss'));
 
@@ -15,9 +18,15 @@ class Login extends Component {
     logout: PropTypes.func
   }
 
+  getChildContext() {
+    return {
+      muiTheme: ThemeManager.getCurrentTheme()
+    };
+  }
+
   handleSubmit(event) {
     event.preventDefault();
-    const input = this.refs.username.getDOMNode();  // need for getDOMNode() call going away in React 0.14
+    const input = React.findDOMNode(this.refs.username).children[1];
     this.props.login(input.value);
     input.value = '';
   }
@@ -30,8 +39,18 @@ class Login extends Component {
         {!user &&
         <div>
           <form className="login-form" onSubmit={::this.handleSubmit}>
-            <input type="text" ref="username" placeholder="Enter a username"/>
-            <button className="btn btn-success" onClick={::this.handleSubmit}><i className="fa fa-sign-in"/>{' '}Log In</button>
+            <TextField
+                ref="username"
+                floatingLabelText="Username"
+                multiLine={false}/>
+            <br/>
+            <TextField
+                hintText="Password Field"
+                floatingLabelText="Password"
+                type="password"/>
+            <br/>
+            <RaisedButton label="login" onClick={::this.handleSubmit}
+            />
           </form>
           <p>This will "log you in" as this user, storing the username in the session of the API server.</p>
         </div>
@@ -49,11 +68,14 @@ class Login extends Component {
   }
 }
 
+Login.childContextTypes = {
+  muiTheme: React.PropTypes.object
+};
+
 @connect(state => ({
   user: state.auth.user
 }))
-export default
-class LoginContainer extends Component {
+export default class LoginContainer extends Component {
   static propTypes = {
     user: PropTypes.object,
     dispatch: PropTypes.func.isRequired
