@@ -10,6 +10,7 @@ import LoginSuccess from 'views/LoginSuccess';
 import Survey from 'views/Survey';
 import NotFound from 'views/NotFound';
 import UserProfile from 'views/UserProfile';
+import SignUp from 'views/SignUp';
 
 export default function(store) {
   return (
@@ -17,6 +18,7 @@ export default function(store) {
       <Route path="/" component={Home}/>
       <Route path="/widgets" component={Widgets}/>
       <Route path="/about" component={About}/>
+      <Route path="/signup" component={SignUp} />
       <Route path="/login" component={Login}/>
       <Route component={RequireLogin} onEnter={RequireLogin.onEnter(store)}>
         <Route path="/loginSuccess" component={LoginSuccess}/>

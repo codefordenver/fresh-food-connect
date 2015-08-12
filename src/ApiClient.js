@@ -44,8 +44,11 @@ class ApiClient_ {
       // Prepend host and port of the API server to the path.
       return 'http://localhost:' + config.apiPort + adjustedPath;
     }
+    // TODO: change the way this is configured
+    return 'http://private-fea41c-freshfoodconnect.apiary-mock.com' + adjustedPath;
+
     // Prepend `/api` to relative URL, to proxy to API server.
-    return '/api' + adjustedPath;
+    // return '/api' + adjustedPath;
   }
 }
 const ApiClient = ApiClient_;

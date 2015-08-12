@@ -7,7 +7,10 @@ import {
   AUTH_LOGIN_FAIL,
   AUTH_LOGOUT,
   AUTH_LOGOUT_SUCCESS,
-  AUTH_LOGOUT_FAIL
+  AUTH_LOGOUT_FAIL,
+  AUTH_SIGNUP,
+  AUTH_SIGNUP_SUCCESS,
+  AUTH_SIGNUP_FAIL
 } from './actionTypes';
 
 export function load() {
@@ -32,5 +35,12 @@ export function logout() {
   return {
     types: [AUTH_LOGOUT, AUTH_LOGOUT_SUCCESS, AUTH_LOGOUT_FAIL],
     promise: (client) => client.get('/logout')
+  };
+}
+
+export function signup(newUserData) {
+  return {
+    types: [AUTH_SIGNUP, AUTH_SIGNUP_SUCCESS, AUTH_SIGNUP_FAIL],
+    promise: (client) => client.post('/users', newUserData)
   };
 }
