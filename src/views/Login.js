@@ -26,9 +26,11 @@ class Login extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const input = React.findDOMNode(this.refs.username).children[1];
-    this.props.login(input.value);
-    input.value = '';
+    const email = React.findDOMNode(this.refs.email).children[1];
+    const password = React.findDOMNode(this.refs.password).children[2];
+    this.props.login(email.value, password.value);
+    email.value = '';
+    password.value = '';
   }
 
   render() {
@@ -40,11 +42,12 @@ class Login extends Component {
         <div>
           <form className="login-form" onSubmit={::this.handleSubmit}>
             <TextField
-                ref="username"
-                floatingLabelText="Username"
+                ref="email"
+                floatingLabelText="Email"
                 multiLine={false}/>
             <br/>
             <TextField
+                ref="password"
                 hintText="Password Field"
                 floatingLabelText="Password"
                 type="password"/>

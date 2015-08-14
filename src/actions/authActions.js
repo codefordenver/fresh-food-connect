@@ -20,12 +20,13 @@ export function load() {
   };
 }
 
-export function login(name) {
+export function login(email, password) {
   return {
     types: [AUTH_LOGIN, AUTH_LOGIN_SUCCESS, AUTH_LOGIN_FAIL],
-    promise: (client) => client.post('/login', {
+    promise: (client) => client.post('/sessions', {
       data: {
-        name: name
+        email,
+        password
       }
     })
   };
