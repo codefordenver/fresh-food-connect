@@ -13,3 +13,9 @@ Router.route('/map', function () {
   this.render('header', {to: 'header'});
   this.render('footer', {to: 'footer'});
 });
+
+Router.route('/pickups', function(){
+  this.render('pickUps');
+  this.render('header', {to: 'header'});
+  this.render('footer', {to: 'footer'});
+});

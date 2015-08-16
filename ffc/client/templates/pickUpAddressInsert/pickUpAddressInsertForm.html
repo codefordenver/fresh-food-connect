@@ -1,0 +1,10 @@
+<template name="pickUpAddressInsertForm">
+  {{#autoForm collection="PickUpAddresses" id="insertPickUpAddressesForm" type="insert"}}
+    <fieldset>
+      <legend>Add a pick up location</legend>
+      {{> afQuickField name='address'}}
+      {{> afQuickField name='note' rows=6}}
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Insert</button>
+  {{/autoForm}}
+</template>

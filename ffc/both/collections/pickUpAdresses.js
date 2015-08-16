@@ -1,13 +1,19 @@
 PickUpAddressesSchema = new SimpleSchema({
+  address:{
+    type: String,
+    label: "Your address"
+  },
   latitude: {
     type: Number,
     decimal: true,
-    label: "your lataitude"
+    label: "your lataitude",
+    optional: true
   },
   longitude: {
     type: Number,
     decimal: true,
-    label: "your longitude"
+    label: "your longitude",
+    optional: true
   },
   note: {
     type: String,
