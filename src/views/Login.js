@@ -1,11 +1,12 @@
 import React, {Component, PropTypes} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
+import {Link} from 'react-router';
 import {isLoaded as isAuthLoaded} from '../reducers/auth';
 import * as authActions from '../actions/authActions';
 import {load as loadAuth} from '../actions/authActions';
 import {requireServerCss} from '../util';
-import { RaisedButton, Styles, TextField } from 'material-ui';
+import { RaisedButton, Styles, TextField, FlatButton } from 'material-ui';
 
 const ThemeManager = new Styles.ThemeManager();
 
@@ -52,8 +53,8 @@ class Login extends Component {
                 floatingLabelText="Password"
                 type="password"/>
             <br/>
-            <RaisedButton label="log in" onClick={::this.handleSubmit}
-            />
+            <RaisedButton label="log in" onClick={::this.handleSubmit}/>
+            <Link to="signup"><FlatButton label="Create Account" secondary={true}/></Link>
           </form>
         </div>
         }

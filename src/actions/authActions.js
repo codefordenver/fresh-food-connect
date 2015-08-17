@@ -32,10 +32,14 @@ export function login(email, password) {
   };
 }
 
-export function logout() {
+export function logout(email) {
   return {
     types: [AUTH_LOGOUT, AUTH_LOGOUT_SUCCESS, AUTH_LOGOUT_FAIL],
-    promise: (client) => client.get('/logout')
+    promise: (client) => client.post('/sessions/logout', {
+      data: {
+        email
+      }
+    })
   };
 }
 

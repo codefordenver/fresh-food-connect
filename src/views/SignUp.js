@@ -55,9 +55,9 @@ const SignUp = React.createClass({
         <div>
           <form onSubmit={this.handleSubmit}>
             <TextField
-                floatingLabelText="Username"
-                value={this.state.username}
-                onChange={this._updateInputState.bind(this, 'username')} />
+                floatingLabelText="Email"
+                value={this.state.email}
+                onChange={this._updateInputState.bind(this, 'email')} />
             <br/>
             <TextField
                 floatingLabelText="Password"

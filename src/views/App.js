@@ -17,7 +17,10 @@ import {
   Toolbar,
   ToolbarGroup,
   ToolbarTitle,
-  DropDownIcon
+  DropDownIcon,
+  ToolbarSeparator,
+  RaisedButton,
+  DropDownMenu
 } from 'material-ui';
 
 const styles = __CLIENT__ ? require('./App.scss') : requireServerCss(require.resolve('./App.scss'));
@@ -81,12 +84,17 @@ class App extends Component {
     return (
       <div className={styles.app}>
 
-        <Toolbar style={{backgroundColor: '#00AD88'}}>
+        <Toolbar style={{backgroundColor: '#45b337'}}>
           <ToolbarGroup key={0} float="left">
-            <ToolbarTitle text="Fresh Food Connect" />
+            <Link to="/">
+              <ToolbarTitle text="Fresh Food Connect" style={{
+            color: 'white'}}/>
+            </Link>
           </ToolbarGroup>
           <ToolbarGroup key={1} float="right">
+            <FontIcon className="mui-icon-sort" />
             <DropDownIcon iconClassName="icon-navigation-expand-more" menuItems={iconMenuItems} />
+            <Link to="login"><RaisedButton label="Sign In" primary={true}/></Link>
           </ToolbarGroup>
         </Toolbar>
 
@@ -123,8 +131,7 @@ App.childContextTypes = {
 @connect(state => ({
   user: state.auth.user
 }))
-export default
-class AppContainer extends Component {
+export default class AppContainer extends Component {
   static propTypes = {
     user: PropTypes.object,
     dispatch: PropTypes.func.isRequired

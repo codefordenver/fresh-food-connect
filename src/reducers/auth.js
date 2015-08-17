@@ -7,7 +7,10 @@ import {
   AUTH_LOGIN_FAIL,
   AUTH_LOGOUT,
   AUTH_LOGOUT_SUCCESS,
-  AUTH_LOGOUT_FAIL
+  AUTH_LOGOUT_FAIL,
+  AUTH_SIGNUP, 
+  AUTH_SIGNUP_SUCCESS,
+  AUTH_SIGNUP_FAIL
 } from '../actions/actionTypes';
 
 const initialState = {
@@ -47,6 +50,24 @@ export default function info(state = initialState, action = {}) {
         user: action.result
       };
     case AUTH_LOGIN_FAIL:
+      return {
+        ...state,
+        loggingIn: false,
+        user: null,
+        loginError: action.error
+      };
+    case AUTH_SIGNUP:
+      return {
+        ...state,
+        loggingIn: true
+      };
+    case AUTH_SIGNUP_SUCCESS:
+      return {
+        ...state,
+        loggingIn: false,
+        user: action.result
+      };
+    case AUTH_SIGNUP_FAIL:
       return {
         ...state,
         loggingIn: false,

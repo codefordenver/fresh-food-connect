@@ -1,24 +1,21 @@
-$cyan: #33e0ff;
+$green: #45b337;
 $humility: #777;
-
+$darkgray: #2d2d2d;
 .home {
   dd {
     margin-bottom: 15px;
   }
 }
 .masthead {
-  background: #2d2d2d;
+  background: lighten($darkgray, 10%);
   padding: 40px 20px;
   color: white;
   text-align: center;
   .logo {
-    $size: 200px;
+    $size: 75%;
     margin: auto;
     height: $size;
     width: $size;
-    border-radius: $size / 2;
-    border: 1px solid $cyan;
-    box-shadow: inset 0 0 10px $cyan;
     vertical-align: middle;
     p {
       line-height: $size;
@@ -30,7 +27,7 @@ $humility: #777;
     }
   }
   h1 {
-    color: $cyan;
+    color: $green;
     font-size: 4em;
   }
   h2 {
