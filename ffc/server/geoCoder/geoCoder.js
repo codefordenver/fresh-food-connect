@@ -5,5 +5,6 @@ Meteor.methods({
           apiKey: Meteor.settings.googleGeoCodeApiKey
         });
         var result = geo.geocode(addy);
+        console.log(result);
     }
 });
