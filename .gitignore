@@ -1,7 +1,5 @@
 .idea/
 node_modules/
-dist/
 *.iml
-webpack-stats.json
 npm-debug.log
 *.DS_Store
