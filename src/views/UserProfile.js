@@ -45,7 +45,7 @@ class UserProfile extends Component {
   }
 
   render() {
-    const {user, logout} = this.props;
+    const {user} = this.props;
     return (
       <div className={styles.loginPage + ' container'}>
         <h1>Profile</h1>

@@ -7,20 +7,16 @@ import {isLoaded as isAuthLoaded} from '../reducers/auth';
 import {load as loadInfo} from '../actions/infoActions';
 import * as authActions from '../actions/authActions';
 import {load as loadAuth} from '../actions/authActions';
-import InfoBar from '../components/InfoBar';
 import {createTransitionHook} from '../universalRouter';
 import {requireServerCss} from '../util';
 import {
-  AppBar,
   FontIcon,
   Styles,
   Toolbar,
   ToolbarGroup,
   ToolbarTitle,
   DropDownIcon,
-  ToolbarSeparator,
-  RaisedButton,
-  DropDownMenu
+  RaisedButton
 } from 'material-ui';
 
 const styles = __CLIENT__ ? require('./App.scss') : requireServerCss(require.resolve('./App.scss'));
@@ -97,23 +93,6 @@ class App extends Component {
             <Link to="login"><RaisedButton label="Sign In" primary={true}/></Link>
           </ToolbarGroup>
         </Toolbar>
-
-        {/*<nav className="navbar navbar-default navbar-fixed-top">
-          <div className="container">
-            <Link to="/" className="navbar-brand">
-              <div className={styles.brand}/>
-              Fresh Food Connect
-            </Link>
-
-            <ul className="nav navbar-nav">
-              {!user && <li><Link to="/login">Login</Link></li>}
-              {user && <li className="logout-link"><a href="/logout" onClick={::this.handleLogout}>Logout</a></li>}
-            </ul>
-
-            {user && <p className={styles.loggedInMessage + ' navbar-text'}>Logged in as <strong>{user.name}</strong>.</p>}
-
-          </div>
-        </nav>*/}
 
         <div className={styles.appContent}>
           {this.props.children}

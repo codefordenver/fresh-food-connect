@@ -8,7 +8,7 @@ import {
   AUTH_LOGOUT,
   AUTH_LOGOUT_SUCCESS,
   AUTH_LOGOUT_FAIL,
-  AUTH_SIGNUP, 
+  AUTH_SIGNUP,
   AUTH_SIGNUP_SUCCESS,
   AUTH_SIGNUP_FAIL
 } from '../actions/actionTypes';

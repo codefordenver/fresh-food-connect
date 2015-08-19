@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
-import CounterButton from '../components/CounterButton';
-import GithubButton from '../components/GithubButton';
 import {requireServerCss, requireServerImage} from '../util';
 import { FlatButton, Styles } from 'material-ui';
 

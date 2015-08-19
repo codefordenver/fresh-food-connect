@@ -48,7 +48,6 @@ const SignUp = React.createClass({
   },
 
   render() {
-    const {signup} = this.props;
     return (
       <div className={styles.loginPage + ' container'}>
         <h1>Sign Up</h1>
@@ -75,7 +74,7 @@ const SignUp = React.createClass({
 });
 
 
-@connect(state => ({}))
+@connect(() => ({}))
 export default class LoginContainer extends Component {
   static propTypes = {
     user: PropTypes.object,
