@@ -18,8 +18,6 @@
     "hot reloading",
     "react-hot-reloader",
     "redux",
-    "starter",
-    "boilerplate",
     "babel"
   ],
   "main": "babel.server.js",
