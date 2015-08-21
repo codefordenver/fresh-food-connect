@@ -4,14 +4,24 @@ import {connect} from 'react-redux';
 import {isLoaded as isAuthLoaded} from '../reducers/auth';
 import * as authActions from '../actions/authActions';
 import {load as loadAuth} from '../actions/authActions';
-import {requireServerCss} from '../util';
 import { RaisedButton, Styles, TextField } from 'material-ui';
 
 const ThemeManager = new Styles.ThemeManager();
 
-const styles = __CLIENT__ ? require('./Login.scss') : requireServerCss(require.resolve('./Login.scss'));
+@connect(
+  state => ({user: state.auth.user}),
+  dispatch => bindActionCreators(authActions, dispatch)
+)
+export default class UserProfile extends Component {
+  static propTypes = {
+    user: PropTypes.object,
+    login: PropTypes.func
+  }
 
-class UserProfile extends Component {
+  static childContextTypes = {
+    muiTheme: React.PropTypes.object
+  }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -22,30 +32,16 @@ class UserProfile extends Component {
     };
   }
 
-  static propTypes = {
-    user: PropTypes.object,
-    login: PropTypes.func
-  }
-
   getChildContext() {
     return {
       muiTheme: ThemeManager.getCurrentTheme()
     };
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
-    console.log(this.state);
-  }
-
-  _updateInputState(key, event) {
-    this.setState({
-      [key]: event.target.value
-    });
-  }
-
   render() {
     const {user} = this.props;
+    const styles = require('./Login.scss');
+
     return (
       <div className={styles.loginPage + ' container'}>
         <h1>Profile</h1>
@@ -94,31 +90,21 @@ class UserProfile extends Component {
       </div>
     );
   }
-}
 
-UserProfile.childContextTypes = {
-  muiTheme: React.PropTypes.object
-};
+  handleSubmit(event) {
+    event.preventDefault();
+    console.log(this.state);
+  }
 
-@connect(state => ({
-  user: state.auth.user
-}))
-export default class UserProfileContainer extends Component {
-  static propTypes = {
-    user: PropTypes.object,
-    dispatch: PropTypes.func.isRequired
+  _updateInputState(key, event) {
+    this.setState({
+      [key]: event.target.value
+    });
   }
 
   static fetchData(store) {
     if (!isAuthLoaded(store.getState())) {
       return store.dispatch(loadAuth());
     }
-  }
-
-  render() {
-    const { user, dispatch } = this.props;
-    return <UserProfile user={user} {...bindActionCreators(authActions, dispatch)}>
-      {this.props.children}
-    </UserProfile>;
   }
 }

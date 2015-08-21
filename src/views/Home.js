@@ -1,26 +1,26 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
-import {requireServerCss, requireServerImage} from '../util';
 import { FlatButton, Styles } from 'material-ui';
 
 const ThemeManager = new Styles.ThemeManager();
-const styles = __CLIENT__ ? require('./Home.scss') : requireServerCss(require.resolve('./Home.scss'));
 
-// require the logo image both from client and server
-let logoImage = '';
-if (__CLIENT__) {
-  logoImage = require('./logo.png');
-} else {
-  logoImage = requireServerImage('./logo.png');
-}
 
 export default class Home extends Component {
+  static childContextTypes = {
+    muiTheme: React.PropTypes.object
+  }
+
   getChildContext() {
     return {
-        muiTheme: ThemeManager.getCurrentTheme()
+      muiTheme: ThemeManager.getCurrentTheme()
     };
   }
+
   render() {
+    const styles = require('./Home.scss');
+    // require the logo image both from client and server
+    const logoImage = require('./logo.png');
+
     return (
       <div className={styles.home}>
         <div className={styles.masthead}>
@@ -42,7 +42,3 @@ export default class Home extends Component {
     );
   }
 }
-
-Home.childContextTypes = {
-    muiTheme: React.PropTypes.object
-};

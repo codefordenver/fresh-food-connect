@@ -1,17 +1,12 @@
 import React, {Component} from 'react';
+import DocumentMeta from 'react-document-meta';
+
 
 export default class About extends Component {
-  state = {
-    showKitten: false
-  }
-
-  handleToggleKitten() {
-    this.setState({showKitten: !this.state.showKitten});
-  }
-
   render() {
     return (
       <div>
+        <DocumentMeta title="Fresh Food Connect | About"/>
         <div className="container">
           <h1>About Fresh Food Connect</h1>
           <h2>A project of <a href="http://www.codefordenver.org/" target="_blank">Code for Denver</a></h2>

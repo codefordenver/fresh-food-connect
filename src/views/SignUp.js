@@ -4,50 +4,41 @@ import {connect} from 'react-redux';
 import {isLoaded as isAuthLoaded} from '../reducers/auth';
 import * as authActions from '../actions/authActions';
 import {load as loadAuth} from '../actions/authActions';
-import {requireServerCss} from '../util';
 import { RaisedButton, Styles, TextField } from 'material-ui';
 
 const ThemeManager = new Styles.ThemeManager();
 
-const styles = __CLIENT__ ? require('./Login.scss') : requireServerCss(require.resolve('./Login.scss'));
-
-const SignUp = React.createClass({
-  propTypes: {
+@connect(
+  () => ({}),
+  dispatch => bindActionCreators(authActions, dispatch)
+)
+export default class SignUp extends Component {
+  static propTypes = {
     signup: PropTypes.func
-  },
+  }
 
-  childContextTypes: {
+  static childContextTypes = {
     muiTheme: React.PropTypes.object
-  },
+  }
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      username: '',
+      password: ''
+    };
+  }
 
   getChildContext() {
     return {
       muiTheme: ThemeManager.getCurrentTheme()
     };
-  },
-
-  getInitialState() {
-    return {
-      username: '',
-      password: ''
-    };
-  },
-
-  _updateInputState(key, event) {
-    this.setState({
-      [key]: event.target.value
-    });
-  },
-
-  handleSubmit(event) {
-    event.preventDefault();
-    this.props.signup({
-      email: this.state.username,
-      password: this.state.password
-    });
-  },
+  }
 
   render() {
+    const styles = require('./Login.scss');
+
     return (
       <div className={styles.loginPage + ' container'}>
         <h1>Sign Up</h1>
@@ -65,32 +56,30 @@ const SignUp = React.createClass({
                 value={this.state.password}
                 onChange={this._updateInputState.bind(this, 'password')}/>
             <br/>
-            <RaisedButton label="Sign Up" onClick={this.handleSubmit}/>
+            <RaisedButton label="Sign Up" onClick={this.handleSubmit.bind(this)}/>
           </form>
         </div>
       </div>
     );
   }
-});
 
+  handleSubmit(event) {
+    event.preventDefault();
+    this.props.signup({
+      email: this.state.username,
+      password: this.state.password
+    });
+  }
 
-@connect(() => ({}))
-export default class LoginContainer extends Component {
-  static propTypes = {
-    user: PropTypes.object,
-    dispatch: PropTypes.func.isRequired
+  _updateInputState(key, event) {
+    this.setState({
+      [key]: event.target.value
+    });
   }
 
   static fetchData(store) {
     if (!isAuthLoaded(store.getState())) {
       return store.dispatch(loadAuth());
     }
-  }
-
-  render() {
-    const { dispatch } = this.props;
-    return <SignUp {...bindActionCreators(authActions, dispatch)}>
-      {this.props.children}
-    </SignUp>;
   }
 }

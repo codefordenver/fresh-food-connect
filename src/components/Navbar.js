@@ -24,7 +24,7 @@ class Navbar extends Component {
   render() {
     const {user, logout} = this.props;
 
-    let iconMenuItems = user ? [
+    const iconMenuItems = user ? [
       // { payload: '1', text: `Logged in as ${user.name}` },
       { payload: '2', text: 'Log Out' }
     ] : [
@@ -36,7 +36,7 @@ class Navbar extends Component {
         <ToolbarGroup key={0} float="left">
           <Link to="/">
             <ToolbarTitle text="Fresh Food Connect" style={{
-          color: 'white'}}/>
+              color: 'white'}}/>
           </Link>
         </ToolbarGroup>
 

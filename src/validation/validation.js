@@ -17,7 +17,7 @@ export function required(value) {
 export function minLength(min) {
   return value => {
     if (!isEmpty(value) && value.length < min) {
-      return `Must be fewer than ${min} characters`;
+      return `Must be at least ${min} characters`;
     }
   };
 }
@@ -25,19 +25,20 @@ export function minLength(min) {
 export function maxLength(max) {
   return value => {
     if (!isEmpty(value) && value.length > max) {
-      return `Must be fewer than ${max} characters`;
+      return `Must be no more than ${max} characters`;
     }
   };
 }
 
 export function createValidator(rules) {
   return (data = {}) => {
-    const errors = {};
+    const errors = { valid: true };
     Object.keys(rules).forEach((key) => {
       const rule = join([].concat(rules[key])); // concat enables both functions and arrays of functions
       const error = rule(data[key]);
       if (error) {
         errors[key] = error;
+        errors.valid = false;
       }
     });
     return errors;
