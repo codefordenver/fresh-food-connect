@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React, {Component, PropTypes} from 'react';
 import {Link} from 'react-router';
 import {
@@ -11,10 +12,11 @@ import {
 
 
 class Navbar extends Component {
+
   static propTypes = {
     user: PropTypes.object,
     logout: PropTypes.func
-  }
+  };
 
   static contextTypes = {
     router: PropTypes.object.isRequired,

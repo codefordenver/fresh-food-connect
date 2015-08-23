@@ -4,19 +4,19 @@ import {connect} from 'react-redux';
 import DocumentMeta from 'react-document-meta';
 import {isLoaded as isInfoLoaded} from '../reducers/info';
 import {isLoaded as isAuthLoaded} from '../reducers/auth';
-import {load as loadInfo} from '../actions/infoActions';
+import {load as loadInfo}from '../actions/infoActions';
 import {load as loadAuth, logout} from '../actions/authActions';
 import {createTransitionHook} from '../universalRouter';
 import {Styles} from 'material-ui';
 import Navbar from '../components/Navbar';
 
-const title = 'React Redux Example';
-const description = 'All the modern best practices in one example.';
-const image = 'https://react-redux.herokuapp.com/logo.jpg';
+const title = 'Fresh Food Connect';
+const description = 'Fresh Food Connect App | Code For Denver';
+const image = './static/logo';
 
 const ThemeManager = new Styles.ThemeManager();
 
-const meta = {
+const meta = { // describe <meta/> tag info in <head/>
   title,
   description,
   meta: {
@@ -26,15 +26,7 @@ const meta = {
       'og:image': image,
       'og:locale': 'en_US',
       'og:title': title,
-      'og:description': description,
-      'twitter:card': 'summary',
-      'twitter:site': '@erikras',
-      'twitter:creator': '@erikras',
-      'twitter:title': title,
-      'twitter:description': description,
-      'twitter:image': image,
-      'twitter:image:width': '200',
-      'twitter:image:height': '200'
+      'og:description': description
     }
   }
 };
@@ -47,7 +39,7 @@ export default class App extends Component {
     children: PropTypes.object.isRequired,
     user: PropTypes.object,
     logout: PropTypes.func.isRequired
-  }
+  };
 
   static contextTypes = {
     router: PropTypes.object.isRequired,
@@ -56,7 +48,7 @@ export default class App extends Component {
 
   static childContextTypes = {
     muiTheme: React.PropTypes.object
-  }
+  };
 
   componentWillMount() {
     const {router, store} = this.context;

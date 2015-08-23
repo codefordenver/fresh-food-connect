@@ -29,6 +29,7 @@ export function login(email, password) {
         password
       }
     })
+    .catch(err => alert(err))
   };
 }
 
@@ -40,6 +41,7 @@ export function logout(email) {
         email
       }
     })
+    .catch(err => alert(err))
   };
 }
 
