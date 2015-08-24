@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import React, {Component, PropTypes} from 'react';
 import {Link} from 'react-router';
 import {
@@ -7,7 +6,7 @@ import {
   ToolbarGroup,
   ToolbarTitle,
   DropDownIcon,
-  RaisedButton
+  FlatButton
 } from 'material-ui';
 
 
@@ -24,6 +23,7 @@ class Navbar extends Component {
   };
 
   render() {
+    const styles = require('./Navbar.scss');
     const {user, logout} = this.props;
 
     const iconMenuItems = user ? [
@@ -33,10 +33,24 @@ class Navbar extends Component {
       { payload: '1', text: 'Log In' }
     ];
 
+    const toolBarStyles = {
+      backgroundColor: '#45b337',
+      position: 'fixed',
+      top: 0,
+      zIndex: 100
+    };
+
+    const signInOutBtnStyles = {
+      backgroundColor: 'transparent',
+      signInOutBtnStyles
+    };
+
     return (
-      <Toolbar style={{backgroundColor: '#45b337'}}>
+      <Toolbar style={toolBarStyles}>
         <ToolbarGroup key={0} float="left">
           <Link to="/">
+            <div className={styles.brand}/>
+
             <ToolbarTitle text="Fresh Food Connect" style={{
               color: 'white'}}/>
           </Link>
@@ -47,11 +61,16 @@ class Navbar extends Component {
           <DropDownIcon iconClassName="icon-navigation-expand-more" menuItems={iconMenuItems} />
           {user ?
             <Link to="/">
-              <RaisedButton label="Sign Out" secondary={true} onClick={logout}/>
+              <FlatButton label="Sign Out"
+                  secondary={true}
+                  onClick={logout}
+                  style={{signInOutBtnStyles}}/>
             </Link>
           :
             <Link to="login">
-              <RaisedButton label="Sign In" primary={true}/>
+              <FlatButton label="Sign In"
+                  primary={true}
+                  style={{lineHeight: '56px'}}/>
             </Link>}
         </ToolbarGroup>
       </Toolbar>

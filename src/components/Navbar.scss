@@ -1,0 +1,10 @@
+.brand {
+  $size: 56px;
+  display:inline-block;
+  background: url('../images/logo.png') no-repeat center center;
+  background-size: cover;
+  vertical-align: top;
+  width: $size;
+  height: $size;
+  background-size: 100%;
+}

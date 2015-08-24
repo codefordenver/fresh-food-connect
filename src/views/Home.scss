@@ -1,53 +1,44 @@
 $green: #45b337;
 $humility: #777;
 $darkgray: #2d2d2d;
+
 .home {
   dd {
     margin-bottom: 15px;
   }
 }
 .masthead {
-  background: lighten($darkgray, 10%);
-  padding: 40px 20px;
-  color: white;
+  background: #fff url('../images/Fruit_&_vegs_assortment-wikimedia.jpg') no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 20px;
+  color: black;
   text-align: center;
-  .logo {
-    $size: 75%;
-    margin: auto;
-    height: $size;
-    width: $size;
-    vertical-align: middle;
-    p {
-      line-height: $size;
-      margin: 0px;
-    }
-    img {
-      width: 75%;
-      margin: auto;
-    }
+
+  .container {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 5px;
   }
-  h1 {
-    color: $green;
-    font-size: 4em;
+
+  .tagline {
+    font-size: 2rem;
+    margin-top: 0;
   }
-  h2 {
-    color: #ddd;
-    font-size: 2em;
-    margin: 20px;
+
+  .tagline,
+  .description {
+    color: black;
+    text-shadow: 0px 0px 6px rgba(255, 255, 255, 0.7);
   }
-  a {
-    color: #ddd;
+
+  .callToActionContainer {
+    margin-top: 30%;
   }
-  p {
-    margin: 10px;
-  }
-  .humility {
-    color: $humility;
-    a {
-      color: $humility;
-    }
-  }
-  .github {
-    font-size: 1.5em;
-  }
+}
+
+.about,
+.facts,
+.tax {
+  padding: 5px 20px;
 }
