@@ -5,7 +5,7 @@ import {Link} from 'react-router';
 import {isLoaded as isAuthLoaded} from '../reducers/auth';
 import * as authActions from '../actions/authActions';
 import {load as loadAuth} from '../actions/authActions';
-import { RaisedButton, Styles, TextField, FlatButton } from 'material-ui';
+import { RaisedButton, Styles, TextField, FlatButton, Snackbar } from 'material-ui';
 import DocumentMeta from 'react-document-meta';
 
 const ThemeManager = new Styles.ThemeManager();
@@ -38,6 +38,10 @@ export default class Login extends Component {
 
     return (
       <div className={styles.loginPage + ' container'}>
+        <Snackbar
+          ref="snackbar"
+          message="Missing Password or Email, please try again."
+          autoHideDuration={2000}/>
         <DocumentMeta title="Fresh Food Connect | Login"/>
         <h1>Login</h1>
         {!user &&
@@ -76,7 +80,12 @@ export default class Login extends Component {
     event.preventDefault();
     const email = React.findDOMNode(this.refs.email).children[1];
     const password = React.findDOMNode(this.refs.password).children[2];
-    this.props.login(email.value, password.value);
+    if (email.value && password.value) {
+      this.props.login(email.value, password.value);
+    } else {
+      this.refs.snackbar.show();
+      return;
+    }
     email.value = '';
     password.value = '';
   }
