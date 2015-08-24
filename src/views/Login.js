@@ -5,7 +5,13 @@ import {Link} from 'react-router';
 import {isLoaded as isAuthLoaded} from '../reducers/auth';
 import * as authActions from '../actions/authActions';
 import {load as loadAuth} from '../actions/authActions';
-import { RaisedButton, Styles, TextField, FlatButton } from 'material-ui';
+import {
+  Card,
+  FlatButton,
+  RaisedButton,
+  Styles,
+  TextField
+} from 'material-ui';
 import DocumentMeta from 'react-document-meta';
 
 const ThemeManager = new Styles.ThemeManager();
@@ -39,35 +45,41 @@ export default class Login extends Component {
     return (
       <div className={styles.loginPage + ' container'}>
         <DocumentMeta title="Fresh Food Connect | Login"/>
-        <h1>Login</h1>
-        {!user &&
-          <div>
-            <form className="login-form" onSubmit={::this.handleSubmit}>
-              <TextField
-                  ref="email"
-                  floatingLabelText="Email"
-                  multiLine={false}/>
-              <br/>
-              <TextField
-                  ref="password"
-                  hintText="Password Field"
-                  floatingLabelText="Password"
-                  type="password"/>
-              <br/>
-              <RaisedButton label="log in" onClick={::this.handleSubmit}/>
-              <Link to="signup"><FlatButton label="Create Account" secondary={true}/></Link>
-            </form>
-          </div>
-        }
-        {user &&
-          <div>
-            <p>You are currently logged in as {user.name}.</p>
 
+        <Card style={{margin: '76px 20px',
+                      padding: '0 20px'}}>
+
+          <h1>Login</h1>
+
+          {!user &&
             <div>
-              <button className="btn btn-danger" onClick={logout}><i className="fa fa-sign-out"/>{' '}Log Out</button>
+              <form className="login-form" onSubmit={::this.handleSubmit}>
+                <TextField
+                    ref="email"
+                    floatingLabelText="Email"
+                    multiLine={false}/>
+                <br/>
+                <TextField
+                    ref="password"
+                    hintText="Password Field"
+                    floatingLabelText="Password"
+                    type="password"/>
+                <br/>
+                <RaisedButton label="log in" onClick={::this.handleSubmit}/>
+                <Link to="signup">
+                  <FlatButton label="Create Account" secondary={true}/>
+                </Link>
+              </form>
             </div>
-          </div>
-        }
+          }
+          {user &&
+            <div>
+              <p>You are currently logged in as {user.name}.</p>
+
+              <FlatButton label="Log Out" secondary={true} onClick={logout}/>
+            </div>
+          }
+        </Card>
       </div>
     );
   }

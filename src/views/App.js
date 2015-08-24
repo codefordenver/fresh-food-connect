@@ -9,6 +9,9 @@ import {load as loadAuth, logout} from '../actions/authActions';
 import {createTransitionHook} from '../universalRouter';
 import {Styles} from 'material-ui';
 import Navbar from '../components/Navbar';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
+injectTapEventPlugin();
 
 const title = 'Fresh Food Connect';
 const description = 'Fresh Food Connect App | Code For Denver';
