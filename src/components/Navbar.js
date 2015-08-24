@@ -5,8 +5,10 @@ import {
   Toolbar,
   ToolbarGroup,
   ToolbarTitle,
+  ToolbarSeparator,
   DropDownIcon,
-  FlatButton
+  FlatButton,
+  Avatar
 } from 'material-ui';
 
 
@@ -26,11 +28,9 @@ class Navbar extends Component {
     const styles = require('./Navbar.scss');
     const {user, logout} = this.props;
 
-    const iconMenuItems = user ? [
-      // { payload: '1', text: `Logged in as ${user.name}` },
-      { payload: '2', text: 'Log Out' }
-    ] : [
-      { payload: '1', text: 'Log In' }
+    let iconMenuItems = [
+      { payload: '1', text: 'Profile' },
+      { payload: '2', text: 'Map' }
     ];
 
     const toolBarStyles = {
@@ -50,23 +50,26 @@ class Navbar extends Component {
         <ToolbarGroup key={0} float="left">
           <Link to="/">
             <div className={styles.brand}/>
-
             <ToolbarTitle text="Fresh Food Connect" style={{
               color: 'white'}}/>
           </Link>
         </ToolbarGroup>
 
         <ToolbarGroup key={1} float="right">
-          <FontIcon className="mui-icon-sort" />
-          <DropDownIcon iconClassName="icon-navigation-expand-more" menuItems={iconMenuItems} />
           {user ?
-            <Link to="/">
+            <div>
+              <ToolbarTitle text={user.user.email}/>
+              <DropDownIcon iconClassName="icon-navigation-expand-more" menuItems={iconMenuItems} iconStyle={{
+               color: 'white'
+              }}/>
+              <Avatar>F</Avatar>
+              <ToolbarSeparator/>
               <FlatButton label="Sign Out"
-                  secondary={true}
-                  onClick={logout}
-                  style={{signInOutBtnStyles}}/>
-            </Link>
-          :
+                          secondary={true}
+                          onClick={logout}
+                          style={{signInOutBtnStyles}}/>
+            </div>
+            :
             <Link to="login">
               <FlatButton label="Sign In"
                   primary={true}
