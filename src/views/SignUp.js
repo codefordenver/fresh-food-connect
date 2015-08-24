@@ -1,10 +1,18 @@
 import React, {Component, PropTypes} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
+import {Link} from 'react-router';
 import {isLoaded as isAuthLoaded} from '../reducers/auth';
 import * as authActions from '../actions/authActions';
 import {load as loadAuth} from '../actions/authActions';
-import { RaisedButton, Styles, TextField } from 'material-ui';
+import DocumentMeta from 'react-document-meta';
+import {
+  Card,
+  FlatButton,
+  RaisedButton,
+  Styles,
+  TextField
+} from 'material-ui';
 
 const ThemeManager = new Styles.ThemeManager();
 
@@ -41,8 +49,12 @@ export default class SignUp extends Component {
 
     return (
       <div className={styles.loginPage + ' container'}>
-        <h1>Sign Up</h1>
-        <div>
+        <DocumentMeta title="Fresh Food Connect | Sign Up"/>
+
+        <Card style={{margin: '76px 20px',
+                      padding: '0 20px'}}>
+          <h1>Sign Up</h1>
+
           <form onSubmit={this.handleSubmit}>
             <TextField
                 floatingLabelText="Email"
@@ -57,8 +69,15 @@ export default class SignUp extends Component {
                 onChange={this._updateInputState.bind(this, 'password')}/>
             <br/>
             <RaisedButton label="Sign Up" onClick={this.handleSubmit.bind(this)}/>
+
+            <p>
+              Have an account already?
+              <Link to="login">
+                <FlatButton label="Log In" secondary={true}/>
+              </Link>
+            </p>
           </form>
-        </div>
+        </Card>
       </div>
     );
   }
