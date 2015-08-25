@@ -5,6 +5,7 @@ import {Link} from 'react-router';
 import {isLoaded as isAuthLoaded} from '../reducers/auth';
 import * as authActions from '../actions/authActions';
 import {load as loadAuth} from '../actions/authActions';
+import loginValidation from '../validation/loginValidation';
 
 import {
   Card,
@@ -41,6 +42,10 @@ export default class Login extends Component {
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+    // store localStorage.setItem('sessionKey', xyz);
+  }
+
   render() {
     const {user, logout} = this.props;
     const styles = require('./Login.scss');
@@ -49,7 +54,7 @@ export default class Login extends Component {
       <div className={styles.loginPage + ' container'}>
         <Snackbar
           ref="snackbar"
-          message="Missing Password or Email, please try again."
+          message="Invalid or Missing Username & Password. Please try again."
           autoHideDuration={2000}/>
         <DocumentMeta title="Fresh Food Connect | Login"/>
 
@@ -80,11 +85,11 @@ export default class Login extends Component {
             </div>
           }
           {user &&
-            <div>
-              <p>You are currently logged in as {user.name}.</p>
+          <div>
+            <p>You are currently logged in as {user.user.email}.</p>
 
-              <FlatButton label="Log Out" secondary={true} onClick={logout}/>
-            </div>
+            <FlatButton label="Log Out" secondary={true} onClick={logout}/>
+          </div>
           }
         </Card>
       </div>
@@ -93,16 +98,25 @@ export default class Login extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const email = React.findDOMNode(this.refs.email).children[1];
-    const password = React.findDOMNode(this.refs.password).children[2];
-    if (email.value && password.value) {
-      this.props.login(email.value, password.value);
+
+    const emailField = React.findDOMNode(this.refs.email).children[1];
+    const passwordField = React.findDOMNode(this.refs.password).children[2];
+    let email = emailField.value;
+    let password = passwordField.value;
+
+    const validation = loginValidation({
+      email,
+      password
+    });
+
+    if (validation.valid) {
+      this.props.login(email, password);
     } else {
       this.refs.snackbar.show();
+      email = '';
+      password = '';
       return;
     }
-    email.value = '';
-    password.value = '';
   }
 
   static fetchData(store) {
