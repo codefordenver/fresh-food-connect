@@ -1,1 +1,3 @@
-webpack/*
+webpack.*
+server.js
+dist
