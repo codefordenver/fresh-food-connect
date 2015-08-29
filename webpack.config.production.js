@@ -4,41 +4,45 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'source-map',
 
-  entry: [
-    'webpack-dev-server/client?http://localhost:3000',
-    'webpack/hot/only-dev-server',
-    './src/index'
-  ],
+  entry: {
+    app: './src/index'
+  },
 
   output: {
-    filename: 'app.js',
+    filename: '[name].min.js',
     path: path.join(__dirname, 'dist'),
-    publicPath: '/assets/'
+    publicPath: ''
   },
 
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(),
     // new webpack.NoErrorsPlugin(),
     // new webpack.DefinePlugin({
     //   'process.env': {
-    //     'NODE_ENV': JSON.stringify('development')
+    //     'NODE_ENV': JSON.stringify('production')
     //   },
-    //   '__DEVTOOLS__': true
+    //   '__DEVTOOLS__': false
     // }),
+    new webpack.optimize.UglifyJsPlugin({
+      compressor: {
+        warnings: false
+      }
+    }),
     new ExtractTextPlugin('app.css', { allChunks: true }),
     new HtmlWebpackPlugin({
       title: 'Fresh Food Connect',
       filename: 'index.html',
       template: 'index.template.html',
-      favicon: path.join(__dirname, 'assets', 'images', 'favicon.ico')
+      favicon: path.join(__dirname, 'assets/images/favicon.ico')
     })
   ],
+
   module: {
     loaders: [
       // { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader!cssnext-loader') },
-      { test: /\.js$/, loaders: ['react-hot', 'babel'], exclude: /node_modules/ }
+      { test: /\.js$/, loaders: ['babel'], exclude: /node_modules/ }
     ]
   },
   // cssnext: {

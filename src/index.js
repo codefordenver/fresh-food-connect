@@ -12,4 +12,4 @@ React.render((
       <Route path="/" component={Home}/>
     </Route>
   </Router>
-), document.body);
+), document.getElementById('app'));

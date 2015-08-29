@@ -4,8 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "node_modules/webpack/bin/webpack.js",
-    "lint": "node_modules/eslint/bin/eslint.js -c .eslintrc src",
+    "build": "npm run clean && npm run lint && node_modules/webpack/bin/webpack.js",
+    "clean": "rm -rf dist",
+    "deploy": "npm run dist && gh-pages -d dist",
+    "dist": "npm run build -- --config webpack.config.production.js",
+    "lint": "node_modules/eslint/bin/eslint.js -c .eslintrc .",
+    "start": "npm run build && node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -29,6 +33,10 @@
     "eslint": "^1.3.0",
     "eslint-config-airbnb": "0.0.8",
     "eslint-plugin-react": "^3.3.0",
-    "webpack": "^1.12.0"
+    "extract-text-webpack-plugin": "^0.8.2",
+    "html-webpack-plugin": "^1.6.1",
+    "react-hot-loader": "^1.3.0",
+    "webpack": "^1.12.0",
+    "webpack-dev-server": "^1.10.1"
   }
 }
