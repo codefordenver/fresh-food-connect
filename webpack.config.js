@@ -22,9 +22,9 @@ module.exports = {
       'process.env': {
         'NODE_ENV': JSON.stringify('development')
       },
-      '__DEVTOOLS__': true
+      '__DEVTOOLS__': false // <-- disables / enables redux-debugging-sidebar
     }),
-    new ExtractTextPlugin('app.css', { allChunks: true }),
+    new ExtractTextPlugin('app.css', {allChunks: true}),
     new HtmlWebpackPlugin({
       title: 'Redux React Router Async Example',
       filename: 'index.html',
@@ -34,6 +34,10 @@ module.exports = {
   ],
   module: {
     loaders: [
+      {
+        test: /\.scss$/,
+        loader: 'style!css!sass'
+      },
       { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader!cssnext-loader') },
       { test: /\.js$/, loaders: ['react-hot', 'babel'], exclude: /node_modules/ }
     ]
