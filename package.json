@@ -19,6 +19,7 @@
     "dist": "npm run build -- --config webpack.config.production.js",
     "lint": "eslint lib",
     "dev": "npm run build && node server.js",
+    "start": "npm run build && node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

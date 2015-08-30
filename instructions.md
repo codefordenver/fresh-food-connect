@@ -5,5 +5,5 @@ Based on : [redux-react-router-async-example](http://emmenko.github.io/redux-rea
 
 ```bash
 npm install
-npm run dev
+npm start
 ```
