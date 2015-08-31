@@ -7,9 +7,9 @@
 - fix es-linting issues
 - fix build
 - npm install, make sure everything runs
+- fix webpack->loaders: scss, url-loader
 
 # TODO
-- fix webpack->loaders: scss
 - add our components back
 - prune components/*
 - prune constants.js
