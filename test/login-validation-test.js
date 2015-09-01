@@ -1,8 +1,7 @@
 import loginValidation from '../lib/validation/loginValidation';
 import chai from 'chai';
 
-var assert = require("assert");
-var expect = chai.expect;
+const expect = chai.expect;
 
 describe('loginValidation', function () {
 	it('should pass validation with an email and password', function(){
@@ -14,7 +13,8 @@ describe('loginValidation', function () {
 			password
 		});
 
-		assert(validation.valid);
+    expect(validation.valid).to.be.true;
+
 	});
 
 	it('should not pass validation with a password longer than 50 characters', function(){
@@ -25,7 +25,7 @@ describe('loginValidation', function () {
 			email,
 			password
 		});
-		
+
 		expect(validation.valid).to.be.false;
 	});
 });
