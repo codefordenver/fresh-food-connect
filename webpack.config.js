@@ -38,9 +38,9 @@ module.exports = {
         test: /\.scss$/,
         loader: 'style!css!sass'
       },
-      { test: /\.png$/, loader: "url-loader?mimetype=image/png" },
-      { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader!cssnext-loader') },
-      { test: /\.js$/, loaders: ['react-hot', 'babel'], exclude: /node_modules/ }
+      {test: /\.png$/, loader: "url-loader?mimetype=image/png"},
+      {test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader!cssnext-loader')},
+      {test: /\.js$/, loaders: ['react-hot', 'babel'], exclude: /node_modules/}
     ]
   },
   cssnext: {
