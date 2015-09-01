@@ -20,7 +20,7 @@
     "lint": "eslint lib",
     "dev": "npm run build && node server.js",
     "start": "npm run build && node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "karma start"
   },
   "dependencies": {
     "babel-runtime": "5.8.20",
@@ -58,6 +58,8 @@
     "sass-loader": "^2.0.1",
     "style-loader": "0.12.3",
     "webpack": "^1.11.0",
-    "webpack-dev-server": "^1.10.1"
+    "webpack-dev-server": "^1.10.1",
+    "mocha": "2.3.0",
+    "chai": "3.2.0"
   }
 }
