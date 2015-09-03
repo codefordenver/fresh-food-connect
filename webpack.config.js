@@ -22,11 +22,11 @@ module.exports = {
       'process.env': {
         'NODE_ENV': JSON.stringify('development')
       },
-      '__DEVTOOLS__': false // <-- disables / enables redux-debugging-sidebar
+      '__DEVTOOLS__': true // <-- disables / enables redux-debugging-sidebar
     }),
     new ExtractTextPlugin('app.css', {allChunks: true}),
     new HtmlWebpackPlugin({
-      title: 'Redux React Router Async Example',
+      title: 'Fresh Food Connect',
       filename: 'index.html',
       template: 'index.template.html',
       favicon: path.join(__dirname, 'assets', 'images', 'favicon.ico')

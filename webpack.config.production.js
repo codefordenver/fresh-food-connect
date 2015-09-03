@@ -29,7 +29,7 @@ module.exports = {
     }),
     new ExtractTextPlugin('app.css', { allChunks: true }),
     new HtmlWebpackPlugin({
-      title: 'Redux React Router Async Example',
+      title: 'Fresh Food Connect',
       filename: 'index.html',
       template: 'index.template.html',
       favicon: path.join(__dirname, 'assets/images/favicon.ico')
