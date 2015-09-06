@@ -33,6 +33,7 @@
     "radium": "^0.13.8",
     "react": "0.13.3",
     "react-document-meta": "^0.1.4",
+    "react-google-maps": "^2.0.3",
     "react-pure-render": "1.0.2",
     "react-redux": "0.9.0",
     "react-router": "1.0.0-beta3",
