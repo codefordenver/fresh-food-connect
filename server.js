@@ -11,7 +11,7 @@ new WebpackDevServer(webpack(config), {
   stats: {
     colors: true
   }
-}).listen(3000, 'localhost', function (err) {
+}).listen(4000, 'localhost', function (err) {
   if (err) console.log(err);
-  console.log('Listening at localhost:3000');
+  console.log('Listening at localhost:4000');
 });
