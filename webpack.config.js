@@ -6,7 +6,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
   entry: [
-    'webpack-dev-server/client?http://localhost:3000',
+    'webpack-dev-server/client?http://localhost:4000',
     'webpack/hot/only-dev-server',
     './lib/index'
   ],
@@ -20,7 +20,8 @@ module.exports = {
     new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': JSON.stringify('development')
+        'NODE_ENV': JSON.stringify('development'),
+        'USE_LOCAL_SERVER': process.env.USE_LOCAL_SERVER
       },
       '__DEVTOOLS__': true // <-- disables / enables redux-debugging-sidebar
     }),
