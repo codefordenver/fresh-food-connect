@@ -3,29 +3,16 @@ import chai from 'chai';
 
 const expect = chai.expect;
 
-describe('loginValidation', function () {
-	it('should pass validation with an email and password', function(){
-		let email = "john.doe@example.com";
-		let password = "abcdefghijklmnopqrstuvwxyz";
+describe('loginValidation', () => {
+  it('should pass validation with an email and password', () => {
+    const email = 'john.doe@example.com';
+    const password = 'abcdefghijklmnopqrstuvwxyz';
 
-		let validation = loginValidation({
-			email,
-			password
-		});
+    const validation = loginValidation({
+      email,
+      password
+    });
 
     expect(validation.valid).to.be.true;
-
-	});
-
-	it('should not pass validation with a password longer than 50 characters', function(){
-		let email = "john.doe@example.com";
-		let password = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz";
-
-		let validation = loginValidation({
-			email,
-			password
-		});
-
-		expect(validation.valid).to.be.false;
-	});
+  });
 });
