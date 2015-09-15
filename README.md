@@ -1,4 +1,5 @@
 > View this project's Kanban board for tasks here: [![Stories in Ready](https://badge.waffle.io/codefordenver/fresh-food-connect.png?label=ready&title=Ready)](https://waffle.io/codefordenver/fresh-food-connect)
+[![Build Status](https://travis-ci.org/codefordenver/fresh-food-connect.svg?branch=master)](https://travis-ci.org/codefordenver/fresh-food-connect)
 
 # Fresh Food Connect
 
