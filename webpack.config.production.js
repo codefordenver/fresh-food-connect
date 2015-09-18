@@ -18,9 +18,10 @@ module.exports = {
     new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': JSON.stringify('production')
+        'NODE_ENV': '"production"'
       },
-      '__DEVTOOLS__': false
+      '__DEVTOOLS__': false,
+      '__CLIENT_HOST__': '"https://www.freshfoodconnect.org"'
     }),
     new webpack.optimize.UglifyJsPlugin({
       compressor: {
