@@ -1,0 +1,258 @@
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover, a:focus, a.selected {
+  color: #f2a72f;
+}
+a:hover #im, a:focus #im {
+  color: white;
+}
+a:hover #sign, a:focus #sign {
+  color: #0edcb5;
+}
+a:active, a:active #sign, a:active #im {
+  color: white;
+}
+#big-figure {
+  width: 100%;
+}
+#big-image {
+  max-width: 100%;
+}
+body {
+  font-family: Roboto, sans-serif;
+  text-align: center;
+  min-width: 220px;
+  margin: auto;
+}
+.card {
+  width: 200px;
+  margin: 1vw;
+  position: relative;
+}
+.card img {
+  width: 100%;
+  height: auto;
+}
+.card .overlay {
+  background: rgba(0, 0, 0, .66);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 35%;
+}
+#cards {
+  background: white;
+  padding: .5vw;
+}
+.card #ihave, #im, #sign {
+  font-size: 6vw;
+  line-height: 1.4em;
+  font-weight: 700;
+}
+.card #iwant {
+  font-size: 3vw;
+  font-weight: 500;
+}
+.card #your {
+  font-size: 2vw;
+  line-height: 1.8;
+}
+#explanation {
+  color: #010000;
+  background: #dfdfdf;
+}
+.explanation {
+  font-size: 2em;
+  color: whitesmoke;
+  padding: 1em;
+}
+
+.hero{
+  margin: 4rem 0;
+  padding: 4rem 0;
+}
+.flex-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coomingSoon h1{
+  color: white;
+}
+/*.flex-container {*/
+  /*display: -webkit-box;*/
+  /*display: -webkit-flex;*/
+  /*display: -ms-flexbox;*/
+  /*display: flex;*/
+  /*-webkit-align-items: stretch;*/
+  /*-webkit-box-align: stretch;*/
+  /*-ms-flex-align: stretch;*/
+  /*align-items: stretch;*/
+  /*-webkit-box-pack: stretch;*/
+  /*-webkit-justify-content: stretch;*/
+  /*-ms-flex-pack: stretch;*/
+  /*justify-content: stretch;*/
+/*}*/
+
+.flex-container .column-flow {
+  -webkit-flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
+  flex-flow: colum nowrap;
+}
+
+.flex-container .row-flow {
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+
+.flex-item {
+  -webkit-flex: 1 auto;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 auto;
+  flex: auto;
+}
+footer article {
+  line-height: 3em;
+}
+footer article a {
+  display: inline-flex;
+  margin: .5em;
+}
+
+#h1part1 {
+  font-size: 8vw;
+}
+#h1part2 {
+  font-size: 10vw;
+}
+header {
+  background-image: url("../images/hero-small.jpg");
+  background-size: cover;
+  width: 100%;
+}
+html {
+  background-color: gray;
+  background-image: url("../images/hero-small.jpg");
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+
+nav ul li{
+  list-style: none;
+}
+
+nav a {
+  display: inline-block;  font-weight: 400;
+}
+nav img {
+  width: 100%;
+}
+nav li {
+  /*margin: .3em;*/
+}
+nav .home {
+  margin-left: 1.3em;
+}
+nav #logo1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5em;
+}
+nav #logo2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 5em;
+}
+
+.note {
+  padding: .5em;
+  margin: .5em;
+}
+#notes {
+  background: white;
+  border-top: .8em solid #dfdfdf;
+  background-image: url("../images/horizon-back.png");
+  background-size: cover;
+  color: #010000;
+  line-height: 1.5em;
+  padding: 0 1em;
+  font-size: .9em;
+  align-items: stretch;
+  padding-bottom: 1.5em;
+}
+
+#notes a {
+  color: black;
+}
+
+#notes a:hover, #notes a:focus {
+  color: inherit;
+  background: rgba(220, 220, 220, .4);
+}
+#notes h2 {
+  font-weight: 700;
+  font-size: 1.5em;
+  color: black;
+  margin: .7em;
+}
+#notes img {
+  max-height: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+#notes .note-icon {
+  height: 4em;
+  padding: .2em;
+  width: 100%;
+}
+strong {
+  font-weight: 700;
+}
+@media only screen and (min-width: 300px) {
+  /*h1 {*/
+    /*height: 40vw;*/
+  /*}*/
+  body {
+    font-size: 13px;
+  }
+  #h1part1 {
+    color: white;
+    font-size: 5vw;
+  }
+  #h1part2 {
+    color: white;
+    font-size: 6vw;
+  }
+}
+@media only screen and (min-width: 600px) {
+  h1 {
+    /*height: 30vw;*/
+  }
+  .card #ihave, #im, #sign {
+    font-size: 2.5em;
+  }
+  .card #iwant {
+    /*font-size: 2vw;*/
+    /*font-weight: 500;*/
+  }
+  .card #your {
+    /*font-size: 1vw;*/
+    /*line-height: 3em;*/
+  }
+  #h1part1 {
+    font-size: 36px;
+  }
+  #h1part2 {
+    font-size: 48px;
+  }
+  nav .home {
+    margin-left: 0;
+  }
+}

@@ -2,7 +2,7 @@
 :root {
   --fontFamily: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --bkgColor: #fff;
-  --fontColor: #999;
+  --fontColor: white;
 }
 
 /* custom selectors */
@@ -24,11 +24,11 @@ html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
 
 body { min-width: 320px; color: #777; line-height: 1.6; }
 
-h1, h2, h3, h4, h5, h6 { font-weight: bold; color: rgb(75, 75, 75); }
+h1, h2, h3, h4, h5, h6 { font-weight: bold;}
 
 h2 { margin: 2em 0 1em 0; font-weight: 300; color: #888; position: relative; }
 
-a:visited { color: #265778; }
+a:visited { color: white; }
 
 .ellipsis { white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
 

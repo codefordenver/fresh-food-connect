@@ -23,7 +23,7 @@ module.exports = {
         'NODE_ENV': JSON.stringify('development'),
         'USE_LOCAL_SERVER': process.env.USE_LOCAL_SERVER
       },
-      '__DEVTOOLS__': true // <-- disables / enables redux-debugging-sidebar
+      '__DEVTOOLS__': false // <-- disables / enables redux-debugging-sidebar
     }),
     new ExtractTextPlugin('app.css', {allChunks: true}),
     new HtmlWebpackPlugin({
@@ -44,7 +44,7 @@ module.exports = {
         test: /\.scss$/,
         loader: 'style!css!sass'
       },
-      {test: /\.png$/, loader: "url-loader?mimetype=image/png"},
+      {test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'},
       {test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader!cssnext-loader')},
       {test: /\.js$/, loaders: ['react-hot', 'babel'], exclude: /node_modules/}
     ]

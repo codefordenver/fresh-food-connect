@@ -10,3 +10,4 @@ html { box-sizing: border-box; }
 
 /* Global CSS */
 @import "page.css";
+@import "home.css";
