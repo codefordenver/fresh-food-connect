@@ -33,6 +33,11 @@ module.exports = {
       filename: 'index.html',
       template: 'index.template.html',
       favicon: path.join(__dirname, 'assets/images/favicon.ico')
+    }),
+    new HtmlWebpackPlugin({
+      filename: '404.html',
+      template: '404.template.html',
+      favicon: path.join(__dirname, 'assets', 'images', 'favicon.ico')
     })
   ],
   module: {
