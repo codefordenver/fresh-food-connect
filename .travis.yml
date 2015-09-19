@@ -1,9 +1,17 @@
 language: node_js
 node_js:
-  - "0.12"
-
+- '0.12'
 install:
-  - npm install
-  
+- npm install
 script:
-  - echo "Hello, World!"
+- npm run dist
+deploy:
+  provider: s3
+  access_key_id: AKIAJTA6SIW57WK2QHJQ
+  secret_access_key:
+    secure: jOjAJlbtDWm1rKydCiSL0UgZgJmcW83xRvyH4OgDyuq14Ccy/4Pr59ay4OBgz50qKZ7E1UaET4glpJn+9IMafJfRsULoZG/2oVD6uesTnm/C5baz5e/kUNkVswe2ry/ZyvgN2MoZwNZHe9JO6THvPP0h7zDKUPmwD1+ODxi4DraBQpkqPaIGDCiqY2PZwOho72tonZbOglB8Dv37b9+9XXa/zwhKq2yBBYFxEs4HfNe9LHs4i6MAXTuOp5IE8i0TUL/uv28ty9ljQuP7MYuTW24AcuwdVu38UTiv75TmeefwRzy/eAKKljzcSYA5+bJ2VhcVg9Oa8Iz5BMZsDe9ZO2pLbck8itPW6fsNqM8m2KKv3VPB/Yk7NNeZ849kd8ZVUoSKZiOcjyqwfbY+zKniYMNbp5X/YgwV/tIX+Dlw1bnmsSFYVltb7QjfAT09CqL6+/0YBDtrox8sptl22iPNB1Jr5y31q5rOp78Nvxzjkl8pR/yTlVTKjk6AdcvEaKL1c4jH3CBBuDfHsSFJEQHrsuFeECtB4XWd+4rTcXwpku7D7/7MNziPcfUFcrwjmhuN5FWKFr1pJXwKT89RI7DdcKzxnzuw+Ky/Kocl4tKchreHQ1ndGd/Zo6CdhznvqQLmwtJ/ewD93UmGBE1WV/gYjumOa2gi8AziUoEM1yPYWqM=
+  bucket: freshfoodconnect.frontend
+  local-dir: dist
+  acl: public_read
+  on:
+    repo: codefordenver/fresh-food-connect
