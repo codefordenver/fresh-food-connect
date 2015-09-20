@@ -27,7 +27,7 @@ https://github.com/yahoo/pure/blob/master/LICENSE.md
 .custom-wrapper {
   color: white;
   background-color: black;
-  margin-bottom: 1em;
+  /*margin-bottom: 1em;*/
   -webkit-font-smoothing: antialiased;
   height: 56px;
   overflow: hidden;
