@@ -125,16 +125,6 @@ a {
   padding: .5vw;
 }
 
-#explanation {
-  color: #010000;
-  background: #dfdfdf;
-}
-.explanation {
-  font-size: 2em;
-  color: whitesmoke;
-  padding: 1em;
-}
-
 .hero{
   margin: 4rem 0;
   padding: 4rem 0;
