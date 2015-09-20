@@ -1,6 +1,6 @@
 /* custom properties */
 :root {
-  --fontFamily: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --fontFamily: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
   --bkgColor: #fff;
   --fontColor: white;
 }

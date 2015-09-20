@@ -50,6 +50,9 @@ module.exports = {
     ]
   },
   cssnext: {
-    browsers: 'last 2 versions'
+    browsers: 'last 2 versions',
+    plugins: [
+      require('postcss-nested')
+    ]
   }
 };
