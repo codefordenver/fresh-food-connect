@@ -2,8 +2,20 @@
 Use `border-box` properly:
 https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
 */
-html { box-sizing: border-box; }
-*, *:before, *:after { box-sizing: inherit; }
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1;
+}
 
 /* External CSS */
 @import "normalize.css/normalize.css";
