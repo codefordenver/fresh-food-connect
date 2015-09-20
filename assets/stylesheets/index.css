@@ -2,44 +2,12 @@
 Use `border-box` properly:
 https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
 */
-
-html {
-  box-sizing: border-box;
-  font-size: 16px;
-  font-family: 'Roboto', sans-serif;
-}
-
-@media only screen and (min-width: 300px) {
-  body {
-    font-size: 13px;
-  }
-  #h1part1 {
-    color: white;
-    font-size: 5vw;
-  }
-  #h1part2 {
-    color: white;
-    font-size: 6vw;
-  }
-}
-
-@media only screen and (min-width: 600px) {
-  html {
-    font-size: 10px;
-  }
-  .card #ihave, #im, #sign {
-    font-size: 2.5em;
-  }
-  nav .home {
-    margin-left: 0;
-  }
-}
-
+html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
 
 /* External CSS */
 @import "normalize.css/normalize.css";
 
 /* Global CSS */
-@import "page.css";
+@import "pure-menu.css";
 @import "home.css";

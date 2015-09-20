@@ -23,7 +23,7 @@ module.exports = {
         'NODE_ENV': JSON.stringify('development'),
         'USE_LOCAL_SERVER': process.env.USE_LOCAL_SERVER
       },
-      '__DEVTOOLS__': false // <-- disables / enables redux-debugging-sidebar
+      '__DEVTOOLS__': true // <-- disables / enables redux-debugging-sidebar
     }),
     new ExtractTextPlugin('app.css', {allChunks: true}),
     new HtmlWebpackPlugin({
