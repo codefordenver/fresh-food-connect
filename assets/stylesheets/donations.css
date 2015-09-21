@@ -1,0 +1,25 @@
+.donations {
+  color: white;
+  font-size: 1rem;
+  margin: 0 auto;
+  text-align: left;
+  width: 75%;
+}
+
+ /* Small devices (tablets, 768px and up) */
+  @media (min-width: 768px) {
+    .donations {
+      font-size: 1.5rem;
+    }
+  }
+
+  /* Medium devices (desktops, 992px and up) */
+  @media (min-width: 992px) {
+  }
+
+  /* Large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) {
+    .donations {
+      width: 50%;
+    }
+  }
