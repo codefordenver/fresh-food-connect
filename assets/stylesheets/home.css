@@ -130,6 +130,9 @@ a {
   padding: 4rem 0;
 }
 
+.text-center {
+  text-align: center;
+}
 
 .coomingSoon h1{
   color: white;
