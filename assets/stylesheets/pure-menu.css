@@ -117,6 +117,11 @@ https://github.com/yahoo/pure/blob/master/LICENSE.md
     text-align: justify;
   }
 
+  .pure-menu-item {
+    margin-left: 65px;
+    padding: 0;
+  }
+
   .pure-menu-item a {
     display: inline-block;
     line-height: 56px;
@@ -124,11 +129,30 @@ https://github.com/yahoo/pure/blob/master/LICENSE.md
 
   .pure-menu-item--profile {
     float: right;
+    margin-left: 0;
+    margin-right: 16px;
+    padding-top: 5px;
     text-align: center;
   }
 
   .pure-menu-item--profile a {
     display: block;
-    line-height: 28px;
+    line-height: 23px;
+  }
+
+  .navigation:after {
+    clear: left;
+    content: '';
+    display: table;
+  }
+
+  .navigation__logo {
+    float: left;
+    width: 260px;
+  }
+
+  .navigation__menu {
+    float: left;
+    width: calc(100% - 260px);
   }
 }
