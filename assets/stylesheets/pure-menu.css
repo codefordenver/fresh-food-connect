@@ -27,10 +27,8 @@ https://github.com/yahoo/pure/blob/master/LICENSE.md
 .custom-wrapper {
   color: white;
   background-color: black;
-  /*margin-bottom: 1em;*/
   -webkit-font-smoothing: antialiased;
   height: 56px;
-  /*overflow: hidden;*/
   position: relative;
 }
 
@@ -64,30 +62,18 @@ https://github.com/yahoo/pure/blob/master/LICENSE.md
   position: absolute;
   top: 18px;
   right: 7px;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -ms-transition: all 0.5s;
   transition: all 0.5s;
 }
 
 .custom-toggle .bar:first-child {
-  -webkit-transform: translateY(-6px);
-  -moz-transform: translateY(-6px);
-  -ms-transform: translateY(-6px);
   transform: translateY(-6px);
 }
 
 .custom-toggle.x .bar {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
 .custom-toggle.x .bar:first-child {
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
 
@@ -112,9 +98,6 @@ https://github.com/yahoo/pure/blob/master/LICENSE.md
   overflow: hidden;
   padding: 0;
   width: 100%;
-  -webkit-transition: height 0.5s;
-  -moz-transition: height 0.5s;
-  -ms-transition: height 0.5s;
   transition: height 0.5s;
 }
 
