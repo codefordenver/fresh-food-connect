@@ -30,15 +30,16 @@ https://github.com/yahoo/pure/blob/master/LICENSE.md
   /*margin-bottom: 1em;*/
   -webkit-font-smoothing: antialiased;
   height: 56px;
-  overflow: hidden;
-  -webkit-transition: height 0.5s;
-  -moz-transition: height 0.5s;
-  -ms-transition: height 0.5s;
-  transition: height 0.5s;
+  /*overflow: hidden;*/
+  position: relative;
 }
 
-.custom-wrapper.open {
+.custom-wrapper.open .pure-menu-list {
   height: 306px;
+}
+
+.custom-wrapper.open .navigation__logo img {
+  display: none;
 }
 
 .custom-toggle {
@@ -51,6 +52,7 @@ https://github.com/yahoo/pure/blob/master/LICENSE.md
   right: 10px;
   top: 0;
   width: 34px;
+  z-index: 4;
 }
 
 .custom-toggle .bar {
@@ -89,23 +91,44 @@ https://github.com/yahoo/pure/blob/master/LICENSE.md
   transform: rotate(-45deg);
 }
 
-.pure-menu-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  width: 100%;
+.navigation__logo img {
+  left: 0;
+  position: absolute;
+  top: 0px;
+  width: 90px;
+  z-index: 4;
 }
 
-.pure-menu-item {
+.navigation__menu {
+  background: black;
+  position: relative;
+  z-index: 3;
+}
+
+.pure-menu-list {
+  height: 56px;
+  list-style: none;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+  -webkit-transition: height 0.5s;
+  -moz-transition: height 0.5s;
+  -ms-transition: height 0.5s;
+  transition: height 0.5s;
+}
+
+.pure-menu-horizontal .pure-menu-item {
   box-sizing: border-box;
+  display: block;
   font-size: 20px;
-  padding: 0 12px;
 }
 
 .pure-menu-item a {
   display: block;
   font-size: 16px;
   line-height: 50px;
+  padding: 0 20px;
 }
 
 @media (min-width: 1024px) {
@@ -113,31 +136,44 @@ https://github.com/yahoo/pure/blob/master/LICENSE.md
     display: none;
   }
 
+  .custom-wrapper {
+    height: 70px;
+  }
+
   .pure-menu-list {
+    height: 67px;
     text-align: justify;
   }
 
-  .pure-menu-item {
-    margin-left: 65px;
+  .pure-menu-horizontal .pure-menu-item {
+    display: inline-block;
+    margin-left: 60px;
     padding: 0;
+  }
+
+  .pure-menu-horizontal .pure-menu-item:first-child {
+    margin-left: 0;
   }
 
   .pure-menu-item a {
     display: inline-block;
-    line-height: 56px;
+    line-height: 60px;
+    padding: 10px 0 0 0;
   }
 
-  .pure-menu-item--profile {
-    float: right;
-    margin-left: 0;
-    margin-right: 16px;
-    padding-top: 5px;
+  .pure-menu-horizontal .pure-menu-item--profile {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 16px;
     text-align: center;
+    top: 0;
   }
 
-  .pure-menu-item--profile a {
+  .pure-menu-horizontal .pure-menu-item--profile a {
     display: block;
-    line-height: 23px;
+    line-height: 35px;
+    padding: 0;
   }
 
   .navigation:after {
@@ -146,13 +182,16 @@ https://github.com/yahoo/pure/blob/master/LICENSE.md
     display: table;
   }
 
-  .navigation__logo {
-    float: left;
-    width: 260px;
+  .navigation__menu {
+    left: 180px;
+    position: absolute;
+    top: 0;
+    width: calc(100% - 180px);
   }
 
-  .navigation__menu {
-    float: left;
-    width: calc(100% - 260px);
+  .navigation__logo img {
+    left: 10px;
+    top: 20px;
+    width: 140px;
   }
 }
