@@ -1,0 +1,180 @@
+/*!
+Pure v0.6.0
+Copyright 2014 Yahoo! Inc. All rights reserved.
+Licensed under the BSD License.
+https://github.com/yahoo/pure/blob/master/LICENSE.md
+*/
+/* HORIZONTAL MENU */
+.pure-menu-horizontal {
+  width: 100%;
+  white-space: nowrap;
+}
+
+.pure-menu-horizontal .pure-menu-list {
+  display: inline-block;
+}
+
+/* Initial menus should be inline-block so that they are horizontal */
+.pure-menu-horizontal .pure-menu-item,
+.pure-menu-horizontal .pure-menu-heading,
+.pure-menu-horizontal .pure-menu-separator {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  vertical-align: middle;
+}
+
+.custom-wrapper {
+  color: white;
+  background-color: black;
+  -webkit-font-smoothing: antialiased;
+  height: 56px;
+  position: relative;
+}
+
+.custom-wrapper.open .pure-menu-list {
+  height: 306px;
+}
+
+.custom-wrapper.open .navigation__logo img {
+  display: none;
+}
+
+.custom-toggle {
+  box-sizing: border-box;
+  display: block;
+  height: 56px;
+  display: block;
+  margin-top: 12px;
+  position: absolute;
+  right: 10px;
+  top: 0;
+  width: 34px;
+  z-index: 4;
+}
+
+.custom-toggle .bar {
+  background-color: #777;
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 100px;
+  position: absolute;
+  top: 18px;
+  right: 7px;
+  transition: all 0.5s;
+}
+
+.custom-toggle .bar:first-child {
+  transform: translateY(-6px);
+}
+
+.custom-toggle.x .bar {
+  transform: rotate(45deg);
+}
+
+.custom-toggle.x .bar:first-child {
+  transform: rotate(-45deg);
+}
+
+.navigation__logo img {
+  left: 0;
+  position: absolute;
+  top: 0px;
+  width: 90px;
+  z-index: 4;
+}
+
+.navigation__menu {
+  background: black;
+  position: relative;
+  z-index: 3;
+}
+
+.pure-menu-list {
+  height: 56px;
+  list-style: none;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+  transition: height 0.5s;
+}
+
+.pure-menu-horizontal .pure-menu-item {
+  box-sizing: border-box;
+  display: block;
+  font-size: 20px;
+}
+
+.pure-menu-item a {
+  display: block;
+  font-size: 16px;
+  line-height: 50px;
+  padding: 0 20px;
+}
+
+@media (min-width: 1024px) {
+  .custom-toggle {
+    display: none;
+  }
+
+  .custom-wrapper {
+    height: 70px;
+  }
+
+  .pure-menu-list {
+    height: 67px;
+    text-align: justify;
+  }
+
+  .pure-menu-horizontal .pure-menu-item {
+    display: inline-block;
+    margin-left: 60px;
+    padding: 0;
+  }
+
+  .pure-menu-horizontal .pure-menu-item:first-child {
+    margin-left: 0;
+  }
+
+  .pure-menu-item a {
+    display: inline-block;
+    line-height: 60px;
+    padding: 10px 0 0 0;
+  }
+
+  .pure-menu-horizontal .pure-menu-item--profile {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 16px;
+    text-align: center;
+    top: 0;
+  }
+
+  .pure-menu-horizontal .pure-menu-item--profile a {
+    display: block;
+    line-height: 35px;
+    padding: 0;
+  }
+
+  .navigation:after {
+    clear: left;
+    content: '';
+    display: table;
+  }
+
+  .navigation__menu {
+    left: 180px;
+    position: absolute;
+    top: 0;
+    width: calc(100% - 180px);
+  }
+
+  .navigation__logo img {
+    left: 10px;
+    top: 20px;
+    width: 140px;
+  }
+}

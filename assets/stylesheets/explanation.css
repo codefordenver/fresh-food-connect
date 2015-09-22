@@ -1,0 +1,47 @@
+.explanation {
+  background: #dfdfdf;
+  position: relative;
+}
+
+.explanation__content {
+  font-size: 24px;
+  line-height: 40px;
+  margin: auto;
+  max-width: 940px;
+  padding: 20px;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+
+.explanation__content-title {
+  color: #010000;
+  display: inline;
+  font-weight: bold;
+}
+
+.explanation__content-if {
+  color: #3f3f3f;
+  display: inline;
+}
+
+.explanation__content-let {
+  color: #010000;
+  display: inline;
+  font-weight: 300;
+}
+
+.explanation__plant {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .explanation__plant {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    width: 80px;
+    z-index: 1;
+  }
+}

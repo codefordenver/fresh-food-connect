@@ -1,0 +1,198 @@
+html {
+  background-color: gray;
+  background-image: url("../images/hero-small.jpg");
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+.flex-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .column-flow {
+    -webkit-flex-flow: column nowrap;
+    -ms-flex-flow: column nowrap;
+    flex-flow: colum nowrap;
+  }
+  .row-flow {
+    -webkit-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+  }
+}
+
+header {
+  background-image: url("../images/hero-small.jpg");
+  background-size: cover;
+  width: 100%;
+}
+
+h1 span {
+  color: white;
+  font-size: 1rem;
+}
+body {
+  min-width: 220px;
+  margin: auto;
+}
+
+nav {
+  ul li {
+    list-style: none;
+  }
+  a {
+    display: inline-block;
+    font-weight: 400;
+  }
+  img {
+    width: 100%;
+  }
+  .home {
+    margin-left: 1.3em;
+  }
+  #logo1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5em;
+  }
+  #logo2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 5em;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  &:hover, :focus, .selected {
+    color: #f2a72f;
+  }
+  &:hover #im, :focus #im {
+    color: white;
+  }
+  &:hover #sign, :focus #sign {
+    color: #0edcb5;
+  }
+  &:active, :active #sign, :active #im {
+    color: white;
+  }
+}
+
+
+#big-figure {
+  width: 100%;
+}
+#big-image {
+  max-width: 100%;
+}
+
+.card {
+  width: 200px;
+  margin: 1vw;
+  position: relative;
+  img {
+    width: 100%;
+    height: auto;
+  }
+  .overlay {
+    background: rgba(0, 0, 0, .66);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 35%;
+  }
+  #ihave, #im, #sign {
+    font-size: 6vw;
+    line-height: 1.4em;
+    font-weight: 700;
+  }
+  #iwant {
+    font-size: 3vw;
+    font-weight: 500;
+  }
+  #your {
+    font-size: 2vw;
+    line-height: 1.8;
+  }
+}
+
+
+#cards {
+  background: white;
+  padding: .5vw;
+}
+
+.hero{
+  margin: 4rem 0;
+  padding: 4rem 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.comingSoon h1{
+  color: white;
+}
+
+
+.flex-item {
+  -webkit-flex: 1 auto;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 auto;
+  flex: auto;
+}
+footer article {
+  line-height: 3em;
+}
+footer article a {
+  display: inline-flex;
+  margin: .5em;
+}
+
+.note {
+  padding: .5em;
+  margin: .5em;
+}
+#notes {
+  background: white;
+  border-top: .8em solid #dfdfdf;
+  background-image: url("../images/horizon-back.png");
+  background-size: cover;
+  color: #010000;
+  line-height: 1.5em;
+  padding: 0 1em;
+  font-size: .9em;
+  align-items: stretch;
+  padding-bottom: 1.5em;
+  a {
+    color: black;
+    &:hover, :focus {
+      color: inherit;
+      background: rgba(220, 220, 220, .4);
+    }
+  }
+  h2 {
+    font-weight: 700;
+    font-size: 1.5em;
+    color: black;
+    margin: .7em;
+  }
+  img {
+    max-height: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .note-icon {
+    height: 4em;
+    padding: .2em;
+    width: 100%;
+  }
+}
+
+strong {
+  font-weight: 700;
+}

@@ -1,0 +1,74 @@
+.sign-me-up {
+  background: white;
+  padding: 20px;
+}
+
+.sign-me-up__card {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+.sign-me-up__card:first-child {
+  margin-bottom: 20px;
+}
+
+.sign-me-up__card-action {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 38px;
+}
+
+.sign-me-up__card-image {
+  display: block;
+  width: 100%;
+}
+
+.sign-me-up__card-overlay {
+  background: rgba(0, 0, 0, 0.66);
+  bottom: 0;
+  color: white;
+  padding: 20px;
+  position: absolute;
+  text-align: center;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.66);
+  width: 100%;
+  z-index: 2;
+}
+
+.sign-me-up__card:hover .sign-me-up__card-overlay {
+  color: #f2a72f;
+}
+
+.sign-me-up__card-small {
+  font-size: 14px;
+}
+
+.sign-me-up__card-title {
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 54px;
+}
+
+.sign-me-up__card--gardener .sign-me-up__card-action {
+  font-size: 48px;
+  line-height: 54px;
+}
+
+@media (min-width: 1024px) {
+  .sign-me-up:after {
+    clear: left;
+    content: '';
+    display: table;
+  }
+
+  .sign-me-up__card {
+    float: left;
+    width: calc(50% - 10px);
+  }
+
+  .sign-me-up__card:first-child {
+    margin-bottom: 0;
+    margin-right: 20px;
+  }
+}
