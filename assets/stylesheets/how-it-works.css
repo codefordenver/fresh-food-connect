@@ -1,0 +1,14 @@
+.how-it-works{
+  line-height: 1.65;
+}
+
+.how-it-works-container{
+  max-width: 500px;
+  padding: 1em;
+  margin: 100px auto;
+}
+
+h1.how-it-works-title{
+  color: dimgray;
+  text-decoration: underline;
+}
