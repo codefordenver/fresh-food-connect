@@ -18,7 +18,8 @@ module.exports = {
     new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': '"production"'
+        'NODE_ENV': JSON.stringify('production'),
+        'API_URL': process.env.API_URL || 'http://api.freshfoodconnect.org'
       },
       '__DEVTOOLS__': false,
       '__CLIENT_HOST__': '"https://www.freshfoodconnect.org"'
