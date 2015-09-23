@@ -3,6 +3,7 @@ html {
   background-image: url("../images/hero-small.jpg");
   background-size: cover;
   background-blend-mode: multiply;
+  background-repeat: no-repeat;
 }
 
 .flex-container{

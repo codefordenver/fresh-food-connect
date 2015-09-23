@@ -50,6 +50,19 @@ module.exports = {
       {test: /\.js$/, loaders: ['react-hot', 'babel'], exclude: /node_modules/}
     ]
   },
+  resolve: {
+    alias: {
+      'actions': __dirname + '/lib/actions',
+      'assets': __dirname + '/assets',
+      'components': __dirname + '/lib/components/',
+      'decorators': __dirname + '/lib/decorators/',
+      'middleware': __dirname + '/lib/middleware/',
+      'persistence': __dirname + '/lib/persistence/',
+      'reducers': __dirname + '/lib/reducers/',
+      'utils': __dirname + '/lib/utils/',
+      'validation': __dirname + '/lib/validation/'
+    }
+  },
   cssnext: {
     browsers: 'last 2 versions',
     plugins: [

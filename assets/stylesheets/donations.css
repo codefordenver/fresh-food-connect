@@ -1,0 +1,50 @@
+.donations {
+  color: white;
+  font-size: 1.2rem;
+  margin: 0 auto;
+  text-align: left;
+  width: 75%;
+  ul {
+    list-style-type: none;
+  }
+  .pickup_info {
+    color: #f2a72f;
+  }
+  .flex-container {
+    display: block;
+    .donationSize {
+      clear: both;
+      cursor: pointer;
+      display: block;
+      margin: 2rem 0rem;
+    }
+  }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .donations {
+    font-size: 1.5rem;
+    .flex-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      .donationSize {
+        clear: none;
+        display: initial;
+        margin: 0;
+      }
+    }
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .donations {
+    width: 50%;
+  }
+}
