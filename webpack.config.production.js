@@ -19,10 +19,10 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production'),
-        'API_URL': process.env.API_URL || 'http://api.freshfoodconnect.org'
+        'API_URL': JSON.stringify(process.env.API_URL || 'http://api.freshfoodconnect.org')
       },
       '__DEVTOOLS__': false,
-      '__CLIENT_HOST__': '"https://www.freshfoodconnect.org"'
+      '__CLIENT_HOST__': JSON.stringify('https://www.freshfoodconnect.org')
     }),
     new webpack.optimize.UglifyJsPlugin({
       compressor: {
