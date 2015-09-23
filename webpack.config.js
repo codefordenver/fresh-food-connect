@@ -23,7 +23,7 @@ module.exports = {
         'NODE_ENV': '"development"', // want this to still be a string after webpack replaces the value
         'USE_LOCAL_SERVER': process.env.USE_LOCAL_SERVER || false
       },
-      '__DEVTOOLS__': true, // <-- disables / enables redux-debugging-sidebar
+      '__DEVTOOLS__': false, // <-- disables / enables redux-debugging-sidebar
       '__CLIENT_HOST__': '"http://localhost:4000"'
     }),
     new ExtractTextPlugin('app.css', {allChunks: true}),
