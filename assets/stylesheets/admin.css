@@ -1,0 +1,10 @@
+.list-table {
+  tr:nth-child(odd) {
+    background-color: #eee;
+  }
+
+  th,
+  td {
+    border: 1px solid white;
+  }
+}
