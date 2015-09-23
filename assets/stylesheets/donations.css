@@ -4,117 +4,35 @@
   margin: 0 auto;
   text-align: left;
   width: 75%;
-  p {
-    margin-bottom: 1rem;
-  }
   ul {
     list-style-type: none;
-    padding-left: 1.25rem;
   }
-  li, li img {
-    vertical-align: middle;
-  }
-  .info {
+  .pickup_info {
     color: #f2a72f;
   }
   .flex-container {
     display: block;
-    .radio {
-      position: absolute;
-      left: 0;
-      width: 2rem;
-      bottom: 2.5rem;
-      &.checked {
-        display: none;
-      }
-    }
-  }
-
-  .highlight {
-    font-size: 2rem;
-    color: #f2a72f;
-    margin: 1rem 0;
-  }
-  .step_title {
-    font-size: 1.6rem;
-    margin: 1rem 0 0.5rem;
-  }
-  button {
-    margin: 1.25rem auto 3.125rem;
-    display: block;
-    background-color: #0edcb5;
-    padding: 1.25rem;
-    border: none;
-  }
-}
-
-.donationSize {
-  text-align: center;
-  position: relative;
-  padding-left: 2rem;
-  &:last-child {
     .donationSize {
-      margin-left: 1rem;
+      clear: both;
+      cursor: pointer;
+      display: block;
+      margin: 2rem 0rem;
     }
-  }
-  &.selected {
-    .radio {
-      display: none;
-      &.checked {
-        display: block;
-      }
-    }
-  }
-  .bag {
-    clear: both;
-    cursor: pointer;
-    display: block;
-    margin: 2rem auto 0.75rem
-  }
-  .bag_label {
-    font-size: 1rem;
   }
 }
-@media (max-width: 767px) {
-  .donationSize {
-    width: 200px;
-    &.small {
 
-      .bag {
-        width: 70px;
-      }
-    }
-    &.medium {
-      .bag {
-        height: 150px;
-      }
-    }
-    &.extraLarge {
-      width: 265px;
-      .bag {
-        height: 150px;
-      }
-    }
-  }
-}
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   .donations {
     font-size: 1.5rem;
-    .bag {
-      margin: 2rem 0rem;
-    }
     .flex-container {
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
-      margin: 2.5rem 0;
       .donationSize {
-        .bag {
-          clear: none;
-          display: initial;
-          margin: 0;
-        }
+        clear: none;
+        display: initial;
+        margin: 0;
       }
     }
   }
@@ -127,6 +45,6 @@
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   .donations {
-    width: 55%;
+    width: 50%;
   }
 }
