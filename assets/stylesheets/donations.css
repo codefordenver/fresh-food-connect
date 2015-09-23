@@ -4,6 +4,7 @@
   margin: 0 auto;
   text-align: left;
   width: 75%;
+  padding-bottom: 5rem;
   p {
     margin-bottom: 1rem;
   }
@@ -38,13 +39,6 @@
   .step_title {
     font-size: 1.6rem;
     margin: 1rem 0 0.5rem;
-  }
-  button {
-    margin: 1.25rem auto 3.125rem;
-    display: block;
-    background-color: #0edcb5;
-    padding: 1.25rem;
-    border: none;
   }
 }
 
