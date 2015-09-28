@@ -4,6 +4,7 @@ https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-pract
 */
 html {
   box-sizing: border-box;
+  height: 100%;
 }
 
 *, *:before, *:after {
