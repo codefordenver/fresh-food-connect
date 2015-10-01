@@ -72,3 +72,23 @@
     margin-right: 20px;
   }
 }
+
+.wizard-enter {
+  transform: translateY(-20px);
+  opacity: 0.01;
+}
+
+.wizard-enter.wizard-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all .5s ease-in;
+}
+
+.wizard-leave {
+  opacity: 1;
+}
+
+.wizard-leave.wizard-leave-active {
+  opacity: 0.01;
+  transition: opacity .5s ease-in;
+}
