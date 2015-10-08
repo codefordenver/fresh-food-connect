@@ -35,3 +35,7 @@ body {
 @import "snackbar.css";
 @import "admin.css";
 @import "donations.css";
+
+.pure-menu-horizontal .pure-menu-item {
+  margin-left: 50px;
+}
