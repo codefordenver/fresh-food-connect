@@ -36,10 +36,7 @@ body {
 @import "admin.css";
 @import "donations.css";
 
-.pure-menu-horizontal .pure-menu-item {
+.pure-menu-horizontal .pure-menu-item:not(:first-child) {
   margin-left: 50px;
 }
 
-#menu:not(.open) .pure-menu-list {
-  height: 0;
-}
