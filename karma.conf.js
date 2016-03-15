@@ -30,6 +30,18 @@ module.exports = function (config) {
         ]
       },
       resolve: {
+        alias: {
+          'support': __dirname + '/test/support',
+          'actions': __dirname + '/lib/actions',
+          'assets': __dirname + '/assets',
+          'components': __dirname + '/lib/components/',
+          'decorators': __dirname + '/lib/decorators/',
+          'middleware': __dirname + '/lib/middleware/',
+          'persistence': __dirname + '/lib/persistence/',
+          'reducers': __dirname + '/lib/reducers/',
+          'utils': __dirname + '/lib/utils/',
+          'validation': __dirname + '/lib/validation/'
+        },
         modulesDirectories: [
           'src',
           'node_modules'
@@ -40,6 +52,7 @@ module.exports = function (config) {
         // hot reload
         new webpack.HotModuleReplacementPlugin(),
         new webpack.IgnorePlugin(/\.json$/),
+        new webpack.IgnorePlugin(/ReactContext$/),
         new webpack.NoErrorsPlugin(),
         new webpack.DefinePlugin({
           __CLIENT__: true,
