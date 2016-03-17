@@ -6,16 +6,15 @@ install:
 script:
 - echo "fix npm tests and get rid of this echo"
 before_deploy:
-  - npm run dist
+- npm run dist
+notifications:
+  email: false
+env:
+  API_URL: https://fresh-food-connect-api-staging.herokuapp.com
 deploy:
   skip_cleanup: true
-  provider: s3
-  access_key_id: AKIAJTA6SIW57WK2QHJQ
-  secret_access_key:
-    secure: jOjAJlbtDWm1rKydCiSL0UgZgJmcW83xRvyH4OgDyuq14Ccy/4Pr59ay4OBgz50qKZ7E1UaET4glpJn+9IMafJfRsULoZG/2oVD6uesTnm/C5baz5e/kUNkVswe2ry/ZyvgN2MoZwNZHe9JO6THvPP0h7zDKUPmwD1+ODxi4DraBQpkqPaIGDCiqY2PZwOho72tonZbOglB8Dv37b9+9XXa/zwhKq2yBBYFxEs4HfNe9LHs4i6MAXTuOp5IE8i0TUL/uv28ty9ljQuP7MYuTW24AcuwdVu38UTiv75TmeefwRzy/eAKKljzcSYA5+bJ2VhcVg9Oa8Iz5BMZsDe9ZO2pLbck8itPW6fsNqM8m2KKv3VPB/Yk7NNeZ849kd8ZVUoSKZiOcjyqwfbY+zKniYMNbp5X/YgwV/tIX+Dlw1bnmsSFYVltb7QjfAT09CqL6+/0YBDtrox8sptl22iPNB1Jr5y31q5rOp78Nvxzjkl8pR/yTlVTKjk6AdcvEaKL1c4jH3CBBuDfHsSFJEQHrsuFeECtB4XWd+4rTcXwpku7D7/7MNziPcfUFcrwjmhuN5FWKFr1pJXwKT89RI7DdcKzxnzuw+Ky/Kocl4tKchreHQ1ndGd/Zo6CdhznvqQLmwtJ/ewD93UmGBE1WV/gYjumOa2gi8AziUoEM1yPYWqM=
-  bucket: www.freshfoodconnect.org
-  region: us-west-2
-  local_dir: dist
-  acl: public_read
-  on:
-    repo: codefordenver/fresh-food-connect
+  provider: heroku
+  app:
+    an-heroku-staging-deploy: fresh-food-connect-ui-staging
+  api_key:
+    secure: nYA2Y72ahvQsb133O4+6ckB/CFZCzOyyGPNOArn+l05JyuMErXhRMzJFKyuhbGVIc7dXhh6cfnfE1oS4UzsYemDwulK54HCWHVb24EI3LPT5Cysx8yIb5eMhqz9j8K8LmDWcviPO3lVvyKJKs6EyDDJ3sVe08CFhj4D8NuS1QkUytpXLatloU9i3KZ5CfqSNCl1xnEbrpom7D+sbX2cM0f7pqByPKmrMm80Ms22HhoCrbaVVl9oLyNRBW4MgUEcbh0Gix094+yIo6IATgIbQNcqUxDIijB5N95J9tYstdK4LesBOCKVJaUdNX/M1Nx/yUgqoi/hYlQ5WGoer3LiOJ0dq4OCKXS2wgKgmRutTMIjRKnXAR+VqYbFuLrAjbhNWeeV1xzQmwYmEzqw4ekKTYypX+CP3ciVjBtc8p+7ZoUboTo5SPcELdlP6ogfujwcT3xzbmpQ78eyOH9NOhrhzM9RfOuRtQNGO1Kzc1r/gSb1j0c/jNfu+tloXWwodBMeT7TMoGA7EQAmawBMhA2zwW2DVl6AqrqPAUH02zYqwhY2GwD06fkK/bPk7iOKnbiLK11AQRJ7HCyYvDEPNNYpewamiaNzIBL8pgu/2wEIlyyp1mXwHoN2Mtj0ardNJjbB+p/XVfqxtEWdai3y2KILK+H+8Yw4748486mWXqMNZTXc=
