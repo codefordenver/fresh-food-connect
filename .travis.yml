@@ -14,7 +14,8 @@ env:
 deploy:
   skip_cleanup: true
   provider: heroku
-  app:
-    an-heroku-staging-deploy: fresh-food-connect-ui-staging
+  app: fresh-food-connect-ui-staging
+  on:
+    all_branches: true
   api_key:
     secure: nYA2Y72ahvQsb133O4+6ckB/CFZCzOyyGPNOArn+l05JyuMErXhRMzJFKyuhbGVIc7dXhh6cfnfE1oS4UzsYemDwulK54HCWHVb24EI3LPT5Cysx8yIb5eMhqz9j8K8LmDWcviPO3lVvyKJKs6EyDDJ3sVe08CFhj4D8NuS1QkUytpXLatloU9i3KZ5CfqSNCl1xnEbrpom7D+sbX2cM0f7pqByPKmrMm80Ms22HhoCrbaVVl9oLyNRBW4MgUEcbh0Gix094+yIo6IATgIbQNcqUxDIijB5N95J9tYstdK4LesBOCKVJaUdNX/M1Nx/yUgqoi/hYlQ5WGoer3LiOJ0dq4OCKXS2wgKgmRutTMIjRKnXAR+VqYbFuLrAjbhNWeeV1xzQmwYmEzqw4ekKTYypX+CP3ciVjBtc8p+7ZoUboTo5SPcELdlP6ogfujwcT3xzbmpQ78eyOH9NOhrhzM9RfOuRtQNGO1Kzc1r/gSb1j0c/jNfu+tloXWwodBMeT7TMoGA7EQAmawBMhA2zwW2DVl6AqrqPAUH02zYqwhY2GwD06fkK/bPk7iOKnbiLK11AQRJ7HCyYvDEPNNYpewamiaNzIBL8pgu/2wEIlyyp1mXwHoN2Mtj0ardNJjbB+p/XVfqxtEWdai3y2KILK+H+8Yw4748486mWXqMNZTXc=
