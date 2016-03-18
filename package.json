@@ -29,7 +29,7 @@
     "express": "^4.13.4",
     "file-loader": "^0.8.4",
     "material-ui": "^0.14.4",
-    "moment": "^2.10.6",
+    "moment": "^2.12.0",
     "normalize.css": "3.0.3",
     "parse-link-header": "0.4.0",
     "postcss-nested": "~0.3.1",
@@ -63,6 +63,7 @@
     "fbjs": "^0.2.1",
     "gh-pages": "^0.3.1",
     "html-webpack-plugin": "^1.6.1",
+    "json-loader": "^0.5.4",
     "karma": "^0.13.9",
     "karma-chai": "^0.1.0",
     "karma-chai-spies": "^0.1.4",
@@ -83,6 +84,7 @@
     "sass-loader": "^2.0.1",
     "skin-deep": "^0.14.0",
     "style-loader": "0.12.3",
+    "timekeeper": "0.0.5",
     "webpack": "^1.11.0",
     "webpack-dev-server": "^1.10.1"
   }

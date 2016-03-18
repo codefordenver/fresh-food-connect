@@ -1,4 +1,4 @@
-import loginValidation from '../lib/validation/loginValidation';
+import loginValidation from 'validation/loginValidation'
 import chai from 'chai';
 
 const expect = chai.expect;
